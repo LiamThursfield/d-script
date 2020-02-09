@@ -11,6 +11,16 @@
 |
 */
 
+Auth::routes([
+    'confirm'   => false,
+    'register'  => true,
+    'reset'     => true,
+    'verify'    => false
+]);
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin/about', 'AdminController@about')->name('admin.about');

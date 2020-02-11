@@ -18,9 +18,11 @@ Auth::routes([
     'verify'    => false
 ]);
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
 
+// App Routes
+Route::get('/', 'AppController@index')->name('home');
+
+
+// Admin Routes
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/about', 'AdminController@about')->name('admin.about');

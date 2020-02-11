@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Poppins);@import url(https://fonts.googleapis.com/css?family=Share Tech Mono);/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
@@ -546,7 +546,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Share Tech Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /**
@@ -590,17 +590,17 @@ video {
 }
 
 html {
-  background-color: #1a202c;
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #f7fafc;
+  background-color: #2d3748;
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #1a202c;
 }
 
 ::selection {
-  background: #a0aec0; /* WebKit/Blink Browsers */
+  background: #f7fafc; /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
-  background: #a0aec0; /* Gecko Browsers */
+  background: #f7fafc; /* Gecko Browsers */
 }
 
 .container{
@@ -3377,6 +3377,14 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
   border-radius: 9999px;
 }
 
+.rounded-xl{
+  border-radius: 1rem;
+}
+
+.rounded-2xl{
+  border-radius: 2rem;
+}
+
 .rounded-t-none{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -3477,6 +3485,46 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
   border-bottom-left-radius: 9999px;
 }
 
+.rounded-t-xl{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.rounded-r-xl{
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.rounded-b-xl{
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.rounded-l-xl{
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.rounded-t-2xl{
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.rounded-r-2xl{
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.rounded-b-2xl{
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.rounded-l-2xl{
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
 .rounded-tl-none{
   border-top-left-radius: 0;
 }
@@ -3555,6 +3603,38 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
 
 .rounded-bl-full{
   border-bottom-left-radius: 9999px;
+}
+
+.rounded-tl-xl{
+  border-top-left-radius: 1rem;
+}
+
+.rounded-tr-xl{
+  border-top-right-radius: 1rem;
+}
+
+.rounded-br-xl{
+  border-bottom-right-radius: 1rem;
+}
+
+.rounded-bl-xl{
+  border-bottom-left-radius: 1rem;
+}
+
+.rounded-tl-2xl{
+  border-top-left-radius: 2rem;
+}
+
+.rounded-tr-2xl{
+  border-top-right-radius: 2rem;
+}
+
+.rounded-br-2xl{
+  border-bottom-right-radius: 2rem;
+}
+
+.rounded-bl-2xl{
+  border-bottom-left-radius: 2rem;
 }
 
 .border-solid{
@@ -3959,12 +4039,12 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
   clear: both;
 }
 
-.font-sans-admin{
+.font-sans{
   font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-sans-app{
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-mono{
+  font-family: Share Tech Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .font-hairline{
@@ -11499,6 +11579,14 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-radius: 9999px;
   }
 
+  .sm\:rounded-xl{
+    border-radius: 1rem;
+  }
+
+  .sm\:rounded-2xl{
+    border-radius: 2rem;
+  }
+
   .sm\:rounded-t-none{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -11599,6 +11687,46 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-bottom-left-radius: 9999px;
   }
 
+  .sm\:rounded-t-xl{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .sm\:rounded-r-xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .sm\:rounded-b-xl{
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .sm\:rounded-l-xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .sm\:rounded-t-2xl{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+
+  .sm\:rounded-r-2xl{
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+
+  .sm\:rounded-b-2xl{
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
+  .sm\:rounded-l-2xl{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
   .sm\:rounded-tl-none{
     border-top-left-radius: 0;
   }
@@ -11677,6 +11805,38 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
 
   .sm\:rounded-bl-full{
     border-bottom-left-radius: 9999px;
+  }
+
+  .sm\:rounded-tl-xl{
+    border-top-left-radius: 1rem;
+  }
+
+  .sm\:rounded-tr-xl{
+    border-top-right-radius: 1rem;
+  }
+
+  .sm\:rounded-br-xl{
+    border-bottom-right-radius: 1rem;
+  }
+
+  .sm\:rounded-bl-xl{
+    border-bottom-left-radius: 1rem;
+  }
+
+  .sm\:rounded-tl-2xl{
+    border-top-left-radius: 2rem;
+  }
+
+  .sm\:rounded-tr-2xl{
+    border-top-right-radius: 2rem;
+  }
+
+  .sm\:rounded-br-2xl{
+    border-bottom-right-radius: 2rem;
+  }
+
+  .sm\:rounded-bl-2xl{
+    border-bottom-left-radius: 2rem;
   }
 
   .sm\:border-solid{
@@ -12081,12 +12241,12 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     clear: both;
   }
 
-  .sm\:font-sans-admin{
+  .sm\:font-sans{
     font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .sm\:font-sans-app{
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .sm\:font-mono{
+    font-family: Share Tech Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .sm\:font-hairline{
@@ -19622,6 +19782,14 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-radius: 9999px;
   }
 
+  .md\:rounded-xl{
+    border-radius: 1rem;
+  }
+
+  .md\:rounded-2xl{
+    border-radius: 2rem;
+  }
+
   .md\:rounded-t-none{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -19722,6 +19890,46 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-bottom-left-radius: 9999px;
   }
 
+  .md\:rounded-t-xl{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .md\:rounded-r-xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .md\:rounded-b-xl{
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .md\:rounded-l-xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .md\:rounded-t-2xl{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+
+  .md\:rounded-r-2xl{
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+
+  .md\:rounded-b-2xl{
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
+  .md\:rounded-l-2xl{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
   .md\:rounded-tl-none{
     border-top-left-radius: 0;
   }
@@ -19800,6 +20008,38 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
 
   .md\:rounded-bl-full{
     border-bottom-left-radius: 9999px;
+  }
+
+  .md\:rounded-tl-xl{
+    border-top-left-radius: 1rem;
+  }
+
+  .md\:rounded-tr-xl{
+    border-top-right-radius: 1rem;
+  }
+
+  .md\:rounded-br-xl{
+    border-bottom-right-radius: 1rem;
+  }
+
+  .md\:rounded-bl-xl{
+    border-bottom-left-radius: 1rem;
+  }
+
+  .md\:rounded-tl-2xl{
+    border-top-left-radius: 2rem;
+  }
+
+  .md\:rounded-tr-2xl{
+    border-top-right-radius: 2rem;
+  }
+
+  .md\:rounded-br-2xl{
+    border-bottom-right-radius: 2rem;
+  }
+
+  .md\:rounded-bl-2xl{
+    border-bottom-left-radius: 2rem;
   }
 
   .md\:border-solid{
@@ -20204,12 +20444,12 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     clear: both;
   }
 
-  .md\:font-sans-admin{
+  .md\:font-sans{
     font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-sans-app{
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .md\:font-mono{
+    font-family: Share Tech Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .md\:font-hairline{
@@ -27745,6 +27985,14 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-radius: 9999px;
   }
 
+  .lg\:rounded-xl{
+    border-radius: 1rem;
+  }
+
+  .lg\:rounded-2xl{
+    border-radius: 2rem;
+  }
+
   .lg\:rounded-t-none{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -27845,6 +28093,46 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-bottom-left-radius: 9999px;
   }
 
+  .lg\:rounded-t-xl{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .lg\:rounded-r-xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .lg\:rounded-b-xl{
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .lg\:rounded-l-xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .lg\:rounded-t-2xl{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+
+  .lg\:rounded-r-2xl{
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+
+  .lg\:rounded-b-2xl{
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
+  .lg\:rounded-l-2xl{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
   .lg\:rounded-tl-none{
     border-top-left-radius: 0;
   }
@@ -27923,6 +28211,38 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
 
   .lg\:rounded-bl-full{
     border-bottom-left-radius: 9999px;
+  }
+
+  .lg\:rounded-tl-xl{
+    border-top-left-radius: 1rem;
+  }
+
+  .lg\:rounded-tr-xl{
+    border-top-right-radius: 1rem;
+  }
+
+  .lg\:rounded-br-xl{
+    border-bottom-right-radius: 1rem;
+  }
+
+  .lg\:rounded-bl-xl{
+    border-bottom-left-radius: 1rem;
+  }
+
+  .lg\:rounded-tl-2xl{
+    border-top-left-radius: 2rem;
+  }
+
+  .lg\:rounded-tr-2xl{
+    border-top-right-radius: 2rem;
+  }
+
+  .lg\:rounded-br-2xl{
+    border-bottom-right-radius: 2rem;
+  }
+
+  .lg\:rounded-bl-2xl{
+    border-bottom-left-radius: 2rem;
   }
 
   .lg\:border-solid{
@@ -28327,12 +28647,12 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     clear: both;
   }
 
-  .lg\:font-sans-admin{
+  .lg\:font-sans{
     font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-sans-app{
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .lg\:font-mono{
+    font-family: Share Tech Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .lg\:font-hairline{
@@ -35868,6 +36188,14 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-radius: 9999px;
   }
 
+  .xl\:rounded-xl{
+    border-radius: 1rem;
+  }
+
+  .xl\:rounded-2xl{
+    border-radius: 2rem;
+  }
+
   .xl\:rounded-t-none{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -35968,6 +36296,46 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     border-bottom-left-radius: 9999px;
   }
 
+  .xl\:rounded-t-xl{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .xl\:rounded-r-xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .xl\:rounded-b-xl{
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .xl\:rounded-l-xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .xl\:rounded-t-2xl{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+
+  .xl\:rounded-r-2xl{
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+
+  .xl\:rounded-b-2xl{
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
+  .xl\:rounded-l-2xl{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+
   .xl\:rounded-tl-none{
     border-top-left-radius: 0;
   }
@@ -36046,6 +36414,38 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
 
   .xl\:rounded-bl-full{
     border-bottom-left-radius: 9999px;
+  }
+
+  .xl\:rounded-tl-xl{
+    border-top-left-radius: 1rem;
+  }
+
+  .xl\:rounded-tr-xl{
+    border-top-right-radius: 1rem;
+  }
+
+  .xl\:rounded-br-xl{
+    border-bottom-right-radius: 1rem;
+  }
+
+  .xl\:rounded-bl-xl{
+    border-bottom-left-radius: 1rem;
+  }
+
+  .xl\:rounded-tl-2xl{
+    border-top-left-radius: 2rem;
+  }
+
+  .xl\:rounded-tr-2xl{
+    border-top-right-radius: 2rem;
+  }
+
+  .xl\:rounded-br-2xl{
+    border-bottom-right-radius: 2rem;
+  }
+
+  .xl\:rounded-bl-2xl{
+    border-bottom-left-radius: 2rem;
   }
 
   .xl\:border-solid{
@@ -36450,12 +36850,12 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
     clear: both;
   }
 
-  .xl\:font-sans-admin{
+  .xl\:font-sans{
     font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .xl\:font-sans-app{
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .xl\:font-mono{
+    font-family: Share Tech Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .xl\:font-hairline{

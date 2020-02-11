@@ -11,8 +11,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   theme: {
     fontFamily: {
-      'sans-admin': ['Poppins', ...defaultTheme.fontFamily.sans],
-      'sans-app': ['Montserrat', ...defaultTheme.fontFamily.sans]
+      'sans': ['Poppins', ...defaultTheme.fontFamily.sans],
+      'mono': ['Share Tech Mono', ...defaultTheme.fontFamily.mono]
     },
     extend: {
       colors: {
@@ -28,6 +28,10 @@ module.exports = {
           900: '#1A1A1A',
         },
       },
+      borderRadius: {
+        'xl':  '1rem',
+        '2xl':  '2rem',
+      }
     },
   },
   variants: {},

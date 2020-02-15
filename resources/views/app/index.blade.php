@@ -11,7 +11,7 @@
             <div class="bg-green-600 h-4 rounded-full w-4"></div>
         </div>
 
-        <h1 class="flex items-center justify-center px-20 py-16 text-center text-green-800 text-5xl">
+        <h1 class="flex items-center justify-center px-20 py-16 text-center text-green-700 text-5xl">
             {{ config('app.name', 'd-script') }}
         </h1>
 
@@ -20,8 +20,8 @@
             @auth
                 <a
                     class="
-                        flex-1 mx-2 px-6 py-1 rounded-full text-center text-gray-500
-                        hover:text-gray-100
+                        flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-green-700
+                        hover:opacity-100
                     "
                     href="{{ url('/admin') }}"
                 >
@@ -30,8 +30,8 @@
             @else
                 <a
                     class="
-                        flex-1 mx-2 px-6 py-1 rounded-full text-center text-gray-500
-                        hover:text-gray-100
+                        flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-green-700
+                        hover:opacity-100
                     "
                     href="{{ route('login') }}"
                 >
@@ -41,8 +41,8 @@
                 @if (Route::has('register'))
                     <a
                         class="
-                            flex-1 mx-2 px-6 py-1 rounded-full text-center text-gray-500
-                            hover:text-gray-100
+                            flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-green-700
+                            hover:opacity-100
                         "
                         href="{{ route('register') }}"
                     >

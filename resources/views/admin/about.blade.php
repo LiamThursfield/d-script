@@ -13,7 +13,7 @@
 
             <div class="bg-white border-yellow-500 border-l-4 mt-8 p-6 rounded-l rounded-r-lg shadow-lg">
                 <p>
-                    This project contains the default setup for a Laravel App with Tailwind and Vue JS.
+                    d-script allows users to easily build the scripts required to run a zero-downtime deployment.
                 </p>
             </div>
 

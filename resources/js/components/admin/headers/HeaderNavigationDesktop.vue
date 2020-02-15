@@ -7,7 +7,7 @@
         <!-- Navigation Links -->
         <ul
             class="
-                flex flex-1 flex-row items-center text-gray-700
+                flex flex-1 flex-row items-center text-green-800
                 md:-mx-3
             "
         >
@@ -17,7 +17,7 @@
                 :key="'header-link-desktop-' + key"
                 class="
                     mx-3
-                    hover:text-gray-900
+                    hover:text-green-600
                 "
             >
                 <a :href="navigation_link.url">
@@ -27,11 +27,11 @@
         </ul>
 
         <!-- User Navigation -->
-        <div class="border-l border-gray-500 pl-6 text-gray-700">
+        <div class="border-l border-gray-500 pl-6 text-green-800">
             <div v-if="user.isGuest()">
                 <a
                     v-if="route('login')"
-                    class="hover:text-gray-900"
+                    class="hover:text-green-600"
                     :class="{'mr-4': route('register')}"
                     :href="route('login')"
                 >
@@ -40,7 +40,7 @@
 
                 <a
                     v-if="route('register')"
-                    class="hover:text-gray-900"
+                    class="hover:text-green-600"
                     :href="route('register')"
                 >
                     Register
@@ -63,7 +63,7 @@
                     <csrf-input />
 
                     <button
-                        class="text-xs text-gray-500 hover:text-gray-900"
+                        class="text-xs text-green-800 opacity-50 hover:opacity-100 hover:text-green-600"
                         type="submit"
                     >
                         (Logout)

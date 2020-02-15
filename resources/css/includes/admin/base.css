@@ -1,6 +1,6 @@
 html {
     @apply font-sans;
-    @apply text-gray-900;
+    @apply text-green-800;
 }
 
 ::selection {

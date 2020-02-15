@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="bg-white py-4 relative shadow-md w-full z-10">
+        <div class="bg-white py-4 relative shadow-md text-green-800 w-full z-10">
             <div class="
                     container flex flex-row justify-center mx-auto relative px-4
                     md:items-baseline md:justify-between
@@ -10,12 +10,12 @@
                 <!-- Logo / Home Link -->
                 <a
                     class="
-                        text-xl
+                        font-mono text-xl
                         md:mr-16
                     "
                     :href="route('home', '')"
                 >
-                    {{ laravel('appName', 'LaravelBaseApp') }}
+                    {{ laravel('appName', 'd-script') }}
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -78,6 +78,11 @@
                     dashboard: {
                         label: "Dashboard",
                         url: route('admin.index'),
+                        require_auth: true
+                    },
+                    sites: {
+                        label: "Sites",
+                        url: route('admin.sites.index'),
                         require_auth: true
                     },
                     about: {

@@ -1,9 +1,9 @@
 <template>
     <button
         class="
-            cursor-pointer fill-current flex justify-center text-gray-700
-            focus:outline-none focus:text-gray-900
-            hover:text-gray-900
+            cursor-pointer fill-current flex justify-center text-green-800
+            focus:outline-none focus:text-green-600
+            hover:text-green-600
         "
         @click="toggleButton"
     >

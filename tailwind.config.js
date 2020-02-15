@@ -11,7 +11,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   theme: {
     fontFamily: {
-      'sans': ['Raleway', ...defaultTheme.fontFamily.sans],
+      'sans': ['Ubuntu', ...defaultTheme.fontFamily.sans],
       'mono': ['Share Tech Mono', ...defaultTheme.fontFamily.mono]
     },
     extend: {

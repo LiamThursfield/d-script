@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Get the user's sites
+     */
+    public function sites()
+    {
+        return $this->hasMany(Site::class);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Site;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SiteController extends Controller
 {
@@ -15,7 +16,9 @@ class SiteController extends Controller
      */
     public function index()
     {
-        //
+        $sites = Auth::user()->sites()->paginate();
+
+        return view('admin.sites.index', ['sites' => $sites]);
     }
 
     /**

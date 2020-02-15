@@ -1,5 +1,24 @@
 /*! purgecss start ignore */
 
+/**
+ *  Transition selectors
+ */
+.transition-color {
+    transition-property: color;
+}
+
+.transition-padding {
+    transition-property: padding;
+}
+
+.transition-duration-default {
+    transition-duration: 300ms;
+}
+
+.transition-ease {
+    transition-timing-function: ease;
+}
+
 /********
  * Fade *
  ********/

@@ -2,7 +2,7 @@
     <div>
         <div class="input-group relative z-10">
             <label
-                class="md:text-right z"
+                class="md:text-right"
                 :class="label_class"
                 :for="input_id"
             >
@@ -17,7 +17,7 @@
             >
                 <input
                     :id="input_id"
-                    class="w-full"
+                    class="bg-gray-850 border-gray-800 w-full"
                     :class="formatted_input_class"
                     :autocomplete="input_autocomplete"
                     :ref="input_id"

@@ -27,6 +27,10 @@ module.exports = {
           800: '#333333',
           900: '#1A1A1A',
         },
+        gray: {
+          ...defaultTheme.colors.gray,
+          '850': '#222938'
+        }
       },
       borderRadius: {
         'xl':  '1rem',

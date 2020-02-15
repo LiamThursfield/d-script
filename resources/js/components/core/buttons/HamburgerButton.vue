@@ -1,8 +1,8 @@
 <template>
     <button
         class="
-            cursor-pointer fill-current flex justify-center text-green-700
-            focus:outline-none focus:text-green-600
+            cursor-pointer fill-current flex justify-center opacity-75 text-green-700
+            focus:outline-none focus:opacity-100
             hover:text-green-600
         "
         @click="toggleButton"

@@ -27,7 +27,7 @@
         </ul>
 
         <!-- User Navigation -->
-        <div class="border-l border-gray-500 pl-6 text-green-700">
+        <div class="border-l border-gray-800 pl-6 text-green-700">
             <div v-if="user.isGuest()">
                 <a
                     v-if="route('login')"

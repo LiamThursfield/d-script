@@ -21,7 +21,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-850">
     <div id="app">
 
         <header-main></header-main>

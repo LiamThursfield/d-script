@@ -7,18 +7,21 @@
 
             @include('admin._partials.session-card')
 
-            @if(count($sites) > 0)
-            <div class="bg-gray-900 mt-8 overflow-hidden py-6 rounded-lg shadow-lg">
-                <h1 class="font-mono px-6 text-green-700 text-2xl">
+            <div>
+                <h1 class="text-2xl">
                     Sites
                 </h1>
+            </div>
+
+            @if(count($sites) > 0)
+            <div class="bg-gray-900 mt-8 overflow-hidden py-1 rounded-lg shadow-lg">
 
                 <ul class="mt-2">
                     @foreach($sites as $site)
                         <li>
                             <a
                                 class="
-                                    block px-6 py-3 text-green-700
+                                    block px-6 py-3 text-green-700 font-mono
                                     transition-color transition-duration-default transition-ease transition-padding
                                     hover:text-green-400 hover:pl-8
                                 "

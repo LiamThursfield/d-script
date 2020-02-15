@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Site
@@ -26,5 +27,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Site extends Model
 {
+    use SoftDeletes;
+
     protected $guarded = [];
+
+
 }

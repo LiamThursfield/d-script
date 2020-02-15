@@ -7,13 +7,14 @@ use Faker\Generator as Faker;
 
 $factory->define(Site::class, function (Faker $faker) {
     return [
-        'git_url' => $faker->url,
-        'ssh_key_path' => '.ssh/' . $faker->word(),
-        'site_directory' => '/sites/' . $faker->word(),
+        'name'                      => $faker->company,
+        'git_url'                   => $faker->url,
+        'ssh_key_path'              => '.ssh/' . $faker->word(),
+        'site_directory'            => '/sites/' . $faker->word(),
         'current_release_directory' => $faker->word(),
-        'releases_directory' => $faker->word(),
-        'persistent_directory' => $faker->word(),
-        'linked_files' => [
+        'releases_directory'        => $faker->word(),
+        'persistent_directory'      => $faker->word(),
+        'linked_files'              => [
             [
                 'from' => $faker->word(),
                 'to' => $faker-> word()
@@ -27,7 +28,7 @@ $factory->define(Site::class, function (Faker $faker) {
                 'to' => $faker-> word()
             ]
         ],
-        'pre_activation_script' => [
+        'pre_activation_script'     => [
             [
                 'active' => $faker->boolean(),
                 'command' => $faker->word(),
@@ -41,7 +42,7 @@ $factory->define(Site::class, function (Faker $faker) {
                 'command' => $faker->word(),
             ]
         ],
-        'post_activation_script' => [
+        'post_activation_script'    => [
             [
                 'active' => $faker->boolean(),
                 'command' => $faker->word(),

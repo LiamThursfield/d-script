@@ -17,6 +17,7 @@ class CreateSitesTable extends Migration
         Schema::create('sites', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->string('name')->index();
             $table->string('git_url');
             $table->string('ssh_key_path')->nullable();
             $table->string('site_directory');

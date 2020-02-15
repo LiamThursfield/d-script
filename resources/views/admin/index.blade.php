@@ -11,13 +11,7 @@
             </h1>
         </div>
 
-        @if (session('status'))
-            <div class="bg-white border-green-600 border-l-4 mt-8 p-6 rounded-l rounded-r-lg shadow-lg">
-                <p>
-                    {{ session('status') }}
-                </p>
-            </div>
-        @endif
+        @include('admin._partials.session-card')
 
         <div class="bg-white border-gray-800 border-l-4 mt-8 p-6 rounded-l rounded-r-lg shadow-lg">
             <p>

@@ -41,4 +41,9 @@ class Site extends Model
         'pre_activation_script' => 'array',
         'post_activation_script' => 'array',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

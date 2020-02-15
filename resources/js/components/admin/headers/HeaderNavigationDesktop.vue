@@ -7,7 +7,7 @@
         <!-- Navigation Links -->
         <ul
             class="
-                flex flex-1 flex-row items-center text-green-800
+                flex flex-1 flex-row items-center text-green-700
                 md:-mx-3
             "
         >
@@ -27,7 +27,7 @@
         </ul>
 
         <!-- User Navigation -->
-        <div class="border-l border-gray-500 pl-6 text-green-800">
+        <div class="border-l border-gray-500 pl-6 text-green-700">
             <div v-if="user.isGuest()">
                 <a
                     v-if="route('login')"
@@ -63,7 +63,7 @@
                     <csrf-input />
 
                     <button
-                        class="text-xs text-green-800 opacity-50 hover:opacity-100 hover:text-green-600"
+                        class="text-xs text-green-700 opacity-50 hover:opacity-100 hover:text-green-600"
                         type="submit"
                     >
                         (Logout)

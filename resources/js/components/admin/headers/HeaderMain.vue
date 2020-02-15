@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="bg-white py-4 relative shadow-md text-green-800 w-full z-10">
+        <div class="bg-white py-4 relative shadow-md text-green-700 w-full z-10">
             <div class="
                     container flex flex-row justify-center mx-auto relative px-4
                     md:items-baseline md:justify-between

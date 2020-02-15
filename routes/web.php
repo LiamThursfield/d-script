@@ -32,4 +32,5 @@ Route::group([
     Route::get('/', 'AdminController@index')->name('index');
     Route::get('/about', 'AdminController@about')->name('about');
 
+    Route::resource('sites', 'SiteController');
 });

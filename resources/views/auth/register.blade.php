@@ -79,7 +79,7 @@
                     <div class="md:w-32"></div>
 
                     <button
-                        class="bg-green-800 px-6 py-2 rounded text-white md:ml-6"
+                        class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white md:ml-6"
                         type="submit"
                     >
                         {{ __('Register') }}

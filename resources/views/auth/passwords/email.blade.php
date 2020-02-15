@@ -47,7 +47,7 @@
                     <div class="md:w-32"></div>
 
                     <div class="md:ml-6">
-                        <button class="bg-green-800 px-6 py-2 rounded text-white">
+                        <button class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white">
                             {{ __('Send Password Reset Link') }}
                         </button>
                     </div>

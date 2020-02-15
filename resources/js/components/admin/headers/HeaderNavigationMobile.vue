@@ -20,7 +20,7 @@
                         <a
                             class="
                                 block p-4 text-l text-center
-                                hover:bg-gray-900 hover:text-white
+                                hover:text-green-500
                             "
                             :href="navigation_link.url"
                         >
@@ -30,14 +30,14 @@
                 </ul>
 
                 <!-- User Navigation -->
-                <div class="bg-gray-900 text-white text-sm">
+                <div class="bg-gray-900 text-green-900 text-sm">
                     <div
                         v-if="user.isGuest()"
                         class="flex"
                     >
                         <a
                             v-if="route('login')"
-                            class="flex-1 p-2 text-center hover:bg-gray-800"
+                            class="flex-1 p-2 text-center hover:text-green-700"
                             :class="{'border-r border-gray-900': route('register')}"
                             :href="route('login')"
                         >
@@ -46,7 +46,7 @@
 
                         <a
                             v-if="route('register')"
-                            class="flex-1 p-2 text-center hover:bg-gray-800"
+                            class="flex-1 p-2 text-center hover:text-green-700"
                             :href="route('register')"
                         >
                             Register
@@ -57,7 +57,7 @@
                         v-else
                         class="flex flex-col"
                     >
-                        <p class="p-4 text-base text-center">
+                        <p class="p-4 text-base text-center text-green-700">
                             {{ user.name }}
                         </p>
 
@@ -69,7 +69,7 @@
                             <csrf-input />
 
                             <button
-                                class="w-full p-4 text-center hover:bg-gray-800"
+                                class="w-full p-4 text-center hover:text-green-700"
                                 type="submit"
                             >
                                 Logout

@@ -59,7 +59,7 @@
                         <!-- Submit Button -->
                         <div class="flex items-center mt-6">
                             <button
-                                class="bg-green-800 px-6 py-2 rounded text-white"
+                                class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white"
                                 type="submit"
                             >
                                 {{ __('Login') }}

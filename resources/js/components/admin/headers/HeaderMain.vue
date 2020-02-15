@@ -77,7 +77,7 @@
                 this.navigation_links = {
                     dashboard: {
                         label: "Dashboard",
-                        url: route('admin'),
+                        url: route('admin.index'),
                         require_auth: true
                     },
                     about: {

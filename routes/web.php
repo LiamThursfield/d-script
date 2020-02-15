@@ -24,5 +24,12 @@ Route::get('/', 'AppController@index')->name('home');
 
 
 // Admin Routes
-Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/admin/about', 'AdminController@about')->name('admin.about');
+Route::group([
+    'namespace' => 'Admin',
+    'prefix'    => 'admin',
+    'as'        => 'admin.'
+],function () {
+    Route::get('/', 'AdminController@index')->name('index');
+    Route::get('/about', 'AdminController@about')->name('about');
+
+});

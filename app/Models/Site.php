@@ -31,5 +31,14 @@ class Site extends Model
 
     protected $guarded = [];
 
-
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'linked_files' => 'array',
+        'pre_activation_script' => 'array',
+        'post_activation_script' => 'array',
+    ];
 }

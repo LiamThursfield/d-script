@@ -22,6 +22,4 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-.idea/d-script.iml
-.idea/php.xml
-.idea/cssdialects.xml
+.idea/*

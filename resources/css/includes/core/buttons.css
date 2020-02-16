@@ -1,0 +1,26 @@
+.btn {
+
+    &:focus {
+        @apply outline-none shadow-outline-white;
+    }
+
+    &:not(.btn-no-padding),
+    &:not(.btn-xs),
+    &:not(.btn-sm),
+    &:not(.btn-lg)
+    {
+        @apply px-6 py-2;
+    }
+
+    &:not(.btn-square) {
+        @apply rounded;
+    }
+
+    &.btn-green {
+        @apply bg-green-800 text-white;
+
+        &:hover {
+            @apply bg-green-700;
+        }
+    }
+}

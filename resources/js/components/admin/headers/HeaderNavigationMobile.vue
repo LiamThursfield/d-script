@@ -20,7 +20,7 @@
                         <a
                             class="
                                 block p-4 text-l text-center
-                                hover:text-green-500
+                                hover:text-green-700
                             "
                             :href="navigation_link.url"
                         >
@@ -57,7 +57,7 @@
                         v-else
                         class="flex flex-col"
                     >
-                        <p class="p-4 text-base text-center text-green-700">
+                        <p class="p-4 text-base text-center text-gray-700">
                             {{ user.name }}
                         </p>
 

@@ -7,10 +7,22 @@
 
             @include('admin._partials.session-card')
 
-            <div>
+            <div class="flex flex-row items-baseline justify-between">
                 <h1 class="text-2xl">
                     Sites
                 </h1>
+
+                <div class="inline-block">
+                <a
+                    class="
+                        bg-gray-900 block inline-block opacity-75 px-4 py-1 rounded-lg shadow-md text-green-800
+                        hover:opacity-100
+                    "
+                    href="{{ route('admin.sites.create') }}"
+                >
+                    Add Site
+                </a>
+                </div>
             </div>
 
             @if(count($sites) > 0)
@@ -39,12 +51,17 @@
                 {!! $sites->links() !!}
             </div>
             @else
-                <div>
-                    You currently have no sites set up.&nbsp;
-                    <a href="{{ route('admin.sites.create') }}">
-                        Create one
-                    </a>
-                    &nbsp;now.
+                <div class="bg-gray-900 border-gray-600 border-l-4 mt-8 p-6 rounded-l rounded-r-lg shadow-lg">
+                    <p>
+                        You currently have no sites set up.&nbsp;
+                        <a
+                            class="text-green-700 hover:text-green-500"
+                            href="{{ route('admin.sites.create') }}"
+                        >
+                            Add one
+                        </a>
+                        now.
+                    </p>
                 </div>
             @endif
 

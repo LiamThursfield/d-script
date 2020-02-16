@@ -15,12 +15,13 @@
                 <div class="inline-block">
                 <a
                     class="
-                        bg-gray-900 block inline-block opacity-75 px-4 py-1 rounded-lg shadow-md text-green-800
-                        hover:opacity-100
+                        block border border-gray-800 inline-block px-3 py-1 rounded-lg text-gray-700 text-sm
+                        duration-100 ease-in-out transition-colors
+                        hover:border-green-800 hover:text-green-800
                     "
                     href="{{ route('admin.sites.create') }}"
                 >
-                    Add Site
+                    New Site
                 </a>
                 </div>
             </div>

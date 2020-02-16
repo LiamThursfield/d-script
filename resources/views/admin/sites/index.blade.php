@@ -33,9 +33,9 @@
                         <li>
                             <a
                                 class="
-                                    block px-6 py-3 text-green-700 font-mono
+                                    block px-6 py-3 font-mono
                                     transition-color transition-duration-default transition-ease transition-padding
-                                    hover:text-green-400 hover:pl-8
+                                    hover:text-green-700 hover:pl-8
                                 "
                                 href="{{ route('admin.sites.show', $site) }}"
                             >

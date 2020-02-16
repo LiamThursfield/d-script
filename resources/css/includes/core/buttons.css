@@ -17,7 +17,7 @@
     }
 
     &:not(.no-transition) {
-        @apply duration-100 ease-in-out transition-colors;
+        @apply duration-100 ease-in-out transition-colors transition-shadow;
     }
 
     &.btn-green {

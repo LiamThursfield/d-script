@@ -4,8 +4,8 @@ html {
 }
 
 ::selection {
-    background: theme('colors.gray.300'); /* WebKit/Blink Browsers */
+    background: theme('colors.gray.600'); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-    background: theme('colors.gray.300'); /* Gecko Browsers */
+    background: theme('colors.gray.600'); /* Gecko Browsers */
 }

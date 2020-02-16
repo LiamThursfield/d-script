@@ -3,7 +3,7 @@
 @section('content')
 <div class="container flex mt-8 mx-auto px-4">
 
-    <div class="max-w-3xl mx-auto w-full">
+    <div class="admin-content-container">
 
         <div>
             <h1 class="text-2xl">

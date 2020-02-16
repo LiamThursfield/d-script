@@ -20,8 +20,9 @@
                     class="bg-gray-850 border-gray-800 w-full"
                     :class="formatted_input_class"
                     :autocomplete="input_autocomplete"
-                    :ref="input_id"
+                    :disabled="input_disabled"
                     :name="input_name"
+                    :ref="input_id"
                     :required="input_required"
                     :type="input_type"
                     :value="input_value"
@@ -79,6 +80,10 @@
             input_class: {
                 default: '',
                 type: String
+            },
+            input_disabled: {
+               default: false,
+               type: Boolean
             },
             input_id: {
                 required: true,

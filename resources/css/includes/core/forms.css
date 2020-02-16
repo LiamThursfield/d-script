@@ -7,10 +7,10 @@ input {
     &[type=url]
     {
         &:not(.appearance-none) {
-            @apply appearance-none bg-gray-850 border border-gray-800 outline-none py-2 px-3 rounded text-green-700;
+            @apply appearance-none bg-gray-850 border border-gray-800 outline-none py-2 px-3 rounded text-gray-600;
 
             &:focus {
-                @apply outline-none shadow-outline-green;
+                @apply outline-none shadow-outline-white;
             }
 
             &.error {

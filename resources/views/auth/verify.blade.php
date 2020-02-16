@@ -11,7 +11,7 @@
                     Success
                 </h1>
 
-                <p class="mt-2 text-center text-green-800 text-sm">
+                <p class="mt-2 text-center text-gray-700 text-sm">
                     {{ __('A fresh verification link has been sent to your email address.') }}
                 </p>
             </div>
@@ -20,7 +20,7 @@
         <div class="bg-gray-900 border-green-700 border-t-4 p-6 rounded-b-lg rounded-t shadow-lg">
             <h1 class="text-center text-lg">{{ __('Verify Your Email Address') }}</h1>
 
-            <div class="mt-4 text-center text-green-800 text-sm">
+            <div class="mt-4 text-center text-gray-700 text-sm">
                 {{ __('Before proceeding, please check your email for a verification link.') }}
                 {{ __('If you did not receive the email') }},
 

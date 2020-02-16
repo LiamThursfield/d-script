@@ -8,7 +8,7 @@
         <div class="bg-gray-900 border-green-700 border-t-4 p-6 rounded-b-lg rounded-t shadow-lg">
             <h1 class="text-center text-lg">{{ __('Confirm Password') }}</h1>
 
-            <p class="mt-2 text-center text-green-800 text-sm">
+            <p class="mt-2 text-center text-gray-700 text-sm">
                 {{ __('Please confirm your password before continuing.') }}
             </p>
 
@@ -22,7 +22,7 @@
                         error_class="text-red-600"
                         error_message="{{ $message }}"
                     @enderror
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('Password') }}"
                     input_autocomplete="current-password"
                     :input_autofocus="true"
@@ -38,7 +38,7 @@
                     <div class="md:ml-6">
                         <div class="flex items-center">
                             <button
-                                class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white"
+                                class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white hover:bg-green-700"
                                 type="submit"
                             >
                                 {{ __('Confirm Password') }}

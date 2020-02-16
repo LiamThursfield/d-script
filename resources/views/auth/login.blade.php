@@ -19,7 +19,7 @@
                         error_class="text-red-600"
                         error_message="{{ $message }}"
                     @enderror
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('E-Mail Address') }}"
                     input_autocomplete="email"
                     :input_autofocus="true"
@@ -33,7 +33,7 @@
                 <!-- Password Input -->
                 <two-col-input-group
                     class="mt-4 text-sm"
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('Password') }}"
                     input_autocomplete="current-password"
                     input_id="password"
@@ -49,7 +49,7 @@
                     <div class="md:ml-6">
                         <!-- Remember Input -->
                         <checkbox-input
-                            label_class="text-green-800"
+                            label_class="text-gray-700"
                             label_text="{{ __('Remember Me') }}"
                             :input_checked="{{ old('remember') ? 'true' : 'false' }}"
                             input_id="remember"
@@ -59,7 +59,7 @@
                         <!-- Submit Button -->
                         <div class="flex items-center mt-6">
                             <button
-                                class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white"
+                                class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white hover:bg-green-700"
                                 type="submit"
                             >
                                 {{ __('Login') }}

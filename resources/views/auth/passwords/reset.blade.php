@@ -20,7 +20,7 @@
                         error_class="text-red-600"
                         error_message="{{ $message }}"
                     @enderror
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('E-Mail Address') }}"
                     input_autocomplete="email"
                     :input_autofocus="true"
@@ -38,7 +38,7 @@
                         error_class="text-red-600"
                         error_message="{{ $message }}"
                     @enderror
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('Password') }}"
                     input_autocomplete="new-password"
                     input_id="password"
@@ -50,7 +50,7 @@
                 <!-- Password Confirmation Input -->
                 <two-col-input-group
                     class="mt-4 text-sm"
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('Confirm Password') }}"
                     input_autocomplete="new-password"
                     input_id="password-confirm"
@@ -64,7 +64,7 @@
                     <div class="md:w-32"></div>
 
                     <button
-                        class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white md:ml-6"
+                        class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white hover:bg-green-700 md:ml-6"
                         type="submit"
                     >
                         {{ __('Reset Password') }}

@@ -11,7 +11,7 @@
                     Success
                 </h1>
 
-                <p class="mt-2 text-center text-green-800 text-sm">
+                <p class="mt-2 text-center text-gray-700 text-sm">
                     {{ session('status') }}
                 </p>
             </div>
@@ -33,7 +33,7 @@
                         error_class="text-red-600"
                         error_message="{{ $message }}"
                     @enderror
-                    label_class="text-green-800 md:w-32"
+                    label_class="text-gray-700 md:w-32"
                     label_text="{{ __('E-Mail Address') }}"
                     input_autocomplete="email"
                     input_id="email"
@@ -47,7 +47,7 @@
                     <div class="md:w-32"></div>
 
                     <div class="md:ml-6">
-                        <button class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white">
+                        <button class="bg-green-800 px-6 py-2 rounded text-white focus:outline-none focus:shadow-outline-white hover:bg-green-700">
                             {{ __('Send Password Reset Link') }}
                         </button>
                     </div>

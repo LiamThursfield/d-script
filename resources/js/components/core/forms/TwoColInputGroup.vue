@@ -17,11 +17,12 @@
             >
                 <input
                     :id="input_id"
-                    class="bg-gray-850 border-gray-800 w-full"
+                    class="bg-gray-850 border-gray-800 placeholder-gray-700 w-full"
                     :class="formatted_input_class"
                     :autocomplete="input_autocomplete"
                     :disabled="input_disabled"
                     :name="input_name"
+                    :placeholder="input_placeholder"
                     :ref="input_id"
                     :required="input_required"
                     :type="input_type"
@@ -91,6 +92,10 @@
             },
             input_name: {
                 required: true,
+                type: String
+            },
+            input_placeholder: {
+                default: '',
                 type: String
             },
             input_required: {

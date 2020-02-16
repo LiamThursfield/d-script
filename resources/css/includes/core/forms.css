@@ -13,6 +13,10 @@ input {
                 @apply outline-none shadow-outline-white;
             }
 
+            &:not(.no-transition) {
+                @apply duration-500 ease-in-out transition-shadow
+            }
+
             &.error {
                 @apply border-red-600;
             }

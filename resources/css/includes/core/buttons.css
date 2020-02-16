@@ -16,6 +16,10 @@
         @apply rounded;
     }
 
+    &:not(.no-transition) {
+        @apply duration-100 ease-in-out transition-colors;
+    }
+
     &.btn-green {
         @apply bg-green-800 text-white;
 

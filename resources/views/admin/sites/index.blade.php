@@ -34,7 +34,7 @@
                             <a
                                 class="
                                     block px-6 py-3 font-mono
-                                    transition-color transition-duration-default transition-ease transition-padding
+                                    duration-300 ease-in-out transition-colors transition-spacing
                                     hover:text-green-700 hover:pl-8
                                 "
                                 href="{{ route('admin.sites.show', $site) }}"

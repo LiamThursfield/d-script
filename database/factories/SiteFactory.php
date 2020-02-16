@@ -4,16 +4,21 @@
 
 use App\Models\Site;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Site::class, function (Faker $faker) {
+    $user_name = Str::slug($faker->name);
+    $company_name = $faker->company;
+    $company_name_slug = Str::slug($company_name);
+
     return [
-        'name'                      => $faker->company,
-        'git_url'                   => $faker->url,
-        'ssh_key_path'              => '.ssh/' . $faker->word(),
-        'site_directory'            => '/sites/' . $faker->word(),
-        'current_release_directory' => $faker->word(),
-        'releases_directory'        => $faker->word(),
-        'persistent_directory'      => $faker->word(),
+        'name'                      => $company_name,
+        'git_url'                   => 'https://github.com/' . $user_name . '/' . $company_name_slug ,
+        'ssh_key_path'              => '/home/' . $user_name . '/.ssh/' . $company_name_slug . '/id_rsa',
+        'site_directory'            => '/home/' . $user_name . '/sites/' . $company_name_slug,
+        'current_release_directory' => 'current',
+        'releases_directory'        => 'releases',
+        'persistent_directory'      => 'shared',
         'persistent_files'          => [
             [
                 'from' => $faker->word(),

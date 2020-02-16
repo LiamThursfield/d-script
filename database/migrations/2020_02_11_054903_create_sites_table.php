@@ -24,7 +24,7 @@ class CreateSitesTable extends Migration
             $table->string('current_release_directory');
             $table->string('releases_directory');
             $table->string('persistent_directory')->nullable();
-            $table->json('linked_files');
+            $table->json('persistent_files');
             $table->json('pre_activation_script');
             $table->json('post_activation_script');
             $table->timestamps();

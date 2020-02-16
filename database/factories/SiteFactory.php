@@ -14,7 +14,7 @@ $factory->define(Site::class, function (Faker $faker) {
         'current_release_directory' => $faker->word(),
         'releases_directory'        => $faker->word(),
         'persistent_directory'      => $faker->word(),
-        'linked_files'              => [
+        'persistent_files'          => [
             [
                 'from' => $faker->word(),
                 'to' => $faker-> word()

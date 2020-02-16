@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string current_release_directory
  * @property string releases_directory
  * @property null|string persistent_directory
- * @property array linked_files
+ * @property array persistent_files
  * @property array pre_activation_script
  * @property array post_activation_script
  * @property Carbon created_at
@@ -37,7 +37,7 @@ class Site extends Model
      * @var array
      */
     protected $casts = [
-        'linked_files' => 'array',
+        'persistent_files' => 'array',
         'pre_activation_script' => 'array',
         'post_activation_script' => 'array',
     ];

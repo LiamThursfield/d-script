@@ -20,18 +20,9 @@ $factory->define(Site::class, function (Faker $faker) {
         'releases_directory'        => 'releases',
         'persistent_directory'      => 'shared',
         'persistent_files'          => [
-            [
-                'from' => $faker->word(),
-                'to' => $faker-> word()
-            ],
-            [
-                'from' => $faker->word(),
-                'to' => $faker-> word()
-            ],
-            [
-                'from' => $faker->word(),
-                'to' => $faker-> word()
-            ]
+            $faker->word(),
+            $faker->word(),
+            $faker->word(),
         ],
         'pre_activation_script'     => [
             [

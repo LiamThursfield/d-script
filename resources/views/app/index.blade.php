@@ -20,7 +20,7 @@
             @auth
                 <a
                     class="
-                        flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-green-700
+                        flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-gray-600
                         hover:opacity-100
                     "
                     href="{{ url('/admin') }}"
@@ -30,7 +30,7 @@
             @else
                 <a
                     class="
-                        flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-green-700
+                        flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-gray-600
                         hover:opacity-100
                     "
                     href="{{ route('login') }}"
@@ -41,7 +41,7 @@
                 @if (Route::has('register'))
                     <a
                         class="
-                            flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-green-700
+                            flex-1 mx-2 px-6 py-1 opacity-75 rounded-full text-center text-gray-600
                             hover:opacity-100
                         "
                         href="{{ route('register') }}"

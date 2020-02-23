@@ -13,6 +13,10 @@ require('./bootstrap');
  */
 window.Vue = require('vue');
 
+// Add Vue packages
+import VueClipboard from "vue-clipboard2";
+Vue.use(VueClipboard);
+
 Vue.prototype.route = route;
 Vue.prototype.laravel = laravel;
 Vue.prototype.user = user;

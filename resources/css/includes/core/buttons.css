@@ -4,6 +4,7 @@
         @apply outline-none shadow-outline-white;
     }
 
+    /* Default Button Size */
     &:not(.btn-no-padding),
     &:not(.btn-xs),
     &:not(.btn-sm),
@@ -12,19 +13,49 @@
         @apply px-6 py-2;
     }
 
+    /* Default Button Radius */
     &:not(.btn-square) {
         @apply rounded;
     }
 
+    /* Default Button Transition */
     &:not(.no-transition) {
-        @apply duration-100 ease-in-out transition-colors transition-shadow;
+        @apply duration-200 ease-in-out transition-all;
     }
 
-    &.btn-green {
-        @apply bg-green-800 text-white;
 
-        &:hover {
-            @apply bg-green-700;
+    /* Outline Buttons */
+    &.btn-outline {
+        @apply border;
+
+        /* Default Outline Button */
+        &:not(.btn-green) {
+            @apply border-gray-700 text-gray-700;
+
+            &:hover {
+                @apply border-gray-600 bg-gray-600 text-gray-900;
+            }
+        }
+
+        /* Coloured Outline Buttons */
+        &.btn-green {
+            @apply border-green-800 text-green-800;
+
+            &:hover {
+                @apply bg-green-800 text-white;
+            }
+        }
+    }
+
+
+    /* Solid Buttons */
+    &:not(.btn-outline) {
+        &.btn-green {
+            @apply bg-green-800 text-white;
+
+            &:hover {
+                @apply bg-green-700;
+            }
         }
     }
 }

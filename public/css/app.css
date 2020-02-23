@@ -742,6 +742,76 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
   }
 }
 
+.toast {
+  position: absolute;
+  user-select: none;
+  z-index: 50;
+}
+
+/* Toast Position */
+
+.toast.toast-bottom {
+  bottom: 30px;
+}
+
+.toast.toast-left {
+  left: 30px;
+}
+
+.toast.toast-right {
+  right: 30px;
+}
+
+.toast.toast-top {
+  top: 80px;
+}
+
+.toast:not(.toast-no-shadow) {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
+}
+
+/* Toast Shape */
+
+.toast:not(.toast-square) {
+  border-radius: 0.5rem;
+}
+
+/* Toast Colors */
+
+.toast:not(.toast-blue),
+    .toast:not(.toast-green),
+    .toast:not(.toast-red)
+    {
+  background-color: #4a5568;
+  color: #fff;
+}
+
+.toast.toast-blue {
+  background-color: #2c5282;
+  color: #fff;
+}
+
+.toast.toast-green {
+  background-color: #276749;
+  color: #fff;
+}
+
+.toast.toast-red {
+  background-color: #9b2c2c;
+  color: #fff;
+}
+
+/* Default Sizing */
+
+.toast:not(.toast-small),
+    .toast:not(.toast-large)
+    {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 /*! purgecss start ignore */
 
 /********

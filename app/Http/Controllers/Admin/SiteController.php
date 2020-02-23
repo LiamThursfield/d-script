@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class SiteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Site::class, 'site');
+    }
+
     /**
      * Display a listing of the resource.
      *

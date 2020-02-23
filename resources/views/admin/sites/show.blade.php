@@ -227,7 +227,7 @@
             </div>
 
             <div class="flex flex-row items-center justify-end mt-8">
-                <a href="" class="btn btn-outline btn-green shadow-lg">
+                <a href="{{ route('admin.sites.show-script', $site) }}" class="btn btn-outline btn-green shadow-lg">
                     Generate Script
                 </a>
             </div>

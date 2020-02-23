@@ -34,5 +34,5 @@ Route::group([
     Route::get('/about', 'AdminController@about')->name('about');
 
     Route::resource('sites', 'SiteController');
-    Route::get('/sites/{site}/script', 'SiteController@showScript')->name('site.show-script');
+    Route::get('/sites/{site}/script', 'SiteController@showScript')->name('sites.show-script');
 });

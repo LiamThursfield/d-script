@@ -631,6 +631,8 @@ html {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
+/* Default Button Size */
+
 .btn:not(.btn-no-padding),
     .btn:not(.btn-xs),
     .btn:not(.btn-sm),
@@ -642,23 +644,59 @@ html {
   padding-bottom: 0.5rem;
 }
 
+/* Default Button Radius */
+
 .btn:not(.btn-square) {
   border-radius: 0.25rem;
 }
 
+/* Default Button Transition */
+
 .btn:not(.no-transition) {
-  transition-duration: 100ms;
+  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-property: box-shadow;
+  transition-property: all;
 }
 
-.btn.btn-green {
+/* Outline Buttons */
+
+.btn.btn-outline {
+  border-width: 1px;
+}
+
+/* Default Outline Button */
+
+.btn.btn-outline:not(.btn-green) {
+  border-color: #4a5568;
+  color: #4a5568;
+}
+
+.btn.btn-outline:not(.btn-green):hover {
+  border-color: #718096;
+  background-color: #718096;
+  color: #1a202c;
+}
+
+/* Coloured Outline Buttons */
+
+.btn.btn-outline.btn-green {
+  border-color: #276749;
+  color: #276749;
+}
+
+.btn.btn-outline.btn-green:hover {
   background-color: #276749;
   color: #fff;
 }
 
-.btn.btn-green:hover {
+/* Solid Buttons */
+
+.btn:not(.btn-outline).btn-green {
+  background-color: #276749;
+  color: #fff;
+}
+
+.btn:not(.btn-outline).btn-green:hover {
   background-color: #2f855a;
 }
 

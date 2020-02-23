@@ -42,8 +42,28 @@ class Site extends Model
         'post_activation_script' => 'array',
     ];
 
+    /**
+     * Get the site's user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Generate the d-script for the current site.
+     *
+     * @param string|null $release_name
+     * @return string
+     */
+    public function generateScript(string $release_name = null)
+    {
+        if (!$release_name) {
+            $release_name = Carbon::now()->format('Ymdhis');
+        }
+
+        return $release_name;
     }
 }

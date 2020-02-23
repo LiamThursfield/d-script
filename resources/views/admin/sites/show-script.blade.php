@@ -18,7 +18,7 @@
                         </a>
                         &nbsp&bull;&nbsp;
                         <a
-                            class="hover:text-blue-700"
+                            class="hover:text-green-700"
                             href="{{ route('admin.sites.show', $site) }}"
                         >
                             {{ $site->name }}
@@ -31,7 +31,7 @@
 
             <div class="bg-gray-900 mt-8 overflow-hidden px-6 py-6 rounded-lg shadow-lg">
 
-                <p class="font-mono">
+                <p class="font-mono overflow-x-scroll overflow-y-hidden whitespace-no-wrap">
                     {{ $site_script }}
                 </p>
 

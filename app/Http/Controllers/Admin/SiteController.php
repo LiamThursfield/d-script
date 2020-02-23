@@ -60,6 +60,22 @@ class SiteController extends Controller
     }
 
     /**
+     * Generate and display the d-script for the specified site.
+     *
+     * @param Site $site
+     * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    protected function showScript(Site $site)
+    {
+        $this->authorize('view-script', $site);
+        return view('admin.sites.show-script', [
+            'site' => $site,
+            'site_script' => $site->generateScript()
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified site.
      *
      * @param  \App\Models\Site  $site

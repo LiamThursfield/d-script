@@ -1,0 +1,56 @@
+.toast {
+    @apply absolute select-none z-50;
+
+    /* Toast Position */
+    &.toast-bottom {
+        bottom: 30px;
+    }
+
+    &.toast-left {
+        left: 30px;
+    }
+
+    &.toast-right {
+        right: 30px;
+    }
+
+    &.toast-top {
+        top: 80px;
+    }
+
+    &:not(.toast-no-shadow) {
+        @apply shadow-xl
+    }
+
+    /* Toast Shape */
+    &:not(.toast-square) {
+        @apply rounded-lg;
+    }
+
+    /* Toast Colors */
+    &:not(.toast-blue),
+    &:not(.toast-green),
+    &:not(.toast-red)
+    {
+        @apply bg-gray-700 text-white;
+    }
+
+    &.toast-blue {
+        @apply bg-blue-800 text-white;
+    }
+
+    &.toast-green {
+        @apply bg-green-800 text-white;
+    }
+
+    &.toast-red {
+        @apply bg-red-800 text-white;
+    }
+
+    /* Default Sizing */
+    &:not(.toast-small),
+    &:not(.toast-large)
+    {
+        @apply px-4 py-2;
+    }
+}

@@ -49,18 +49,18 @@ class SiteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified site.
      *
      * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
      */
     public function show(Site $site)
     {
-        //
+        return view('admin.sites.show', ['site' => $site]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified site.
      *
      * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
@@ -71,7 +71,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified site in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Site  $site
@@ -83,7 +83,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified site from storage.
      *
      * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response

@@ -1346,7 +1346,6 @@ module.exports = function isAbsoluteURL(url) {
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
-var isValidXss = __webpack_require__(/*! ./isValidXss */ "./node_modules/axios/lib/helpers/isValidXss.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1366,10 +1365,6 @@ module.exports = (
     */
       function resolveURL(url) {
         var href = url;
-
-        if (isValidXss(url)) {
-          throw new Error('URL contains XSS injection attempt');
-        }
 
         if (msie) {
         // IE needs attribute set twice to normalize properties
@@ -1416,25 +1411,6 @@ module.exports = (
       };
     })()
 );
-
-
-/***/ }),
-
-/***/ "./node_modules/axios/lib/helpers/isValidXss.js":
-/*!******************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/isValidXss.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isValidXss(requestURL) {
-  var xssRegex = /(\b)(on\w+)=|javascript|(<\s*)(\/*)script/gi;
-  return xssRegex.test(requestURL);
-};
-
 
 
 /***/ }),
@@ -2011,7 +1987,12 @@ __webpack_require__.r(__webpack_exports__);
       this.navigation_links = {
         dashboard: {
           label: "Dashboard",
-          url: route('admin'),
+          url: route('admin.index'),
+          require_auth: true
+        },
+        sites: {
+          label: "Sites",
+          url: route('admin.sites.index'),
           require_auth: true
         },
         about: {
@@ -2500,6 +2481,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TwoColInputGroup",
   props: {
@@ -2531,12 +2514,20 @@ __webpack_require__.r(__webpack_exports__);
       "default": '',
       type: String
     },
+    input_disabled: {
+      "default": false,
+      type: Boolean
+    },
     input_id: {
       required: true,
       type: String
     },
     input_name: {
       required: true,
+      type: String
+    },
+    input_placeholder: {
+      "default": '',
       type: String
     },
     input_required: {
@@ -20194,7 +20185,10 @@ var render = function() {
     [
       _c(
         "div",
-        { staticClass: "bg-white py-4 relative shadow-md w-full z-10" },
+        {
+          staticClass:
+            "bg-gray-900 py-4 relative shadow-md text-green-700 w-full z-10"
+        },
         [
           _c(
             "div",
@@ -20207,13 +20201,13 @@ var render = function() {
                 "a",
                 {
                   staticClass:
-                    "\n                    text-xl\n                    md:mr-16\n                ",
+                    "\n                    font-mono text-xl\n                    md:mr-16\n                ",
                   attrs: { href: _vm.route("home", "") }
                 },
                 [
                   _vm._v(
                     "\n                " +
-                      _vm._s(_vm.laravel("appName", "LaravelBaseApp")) +
+                      _vm._s(_vm.laravel("appName", "d-script")) +
                       "\n            "
                   )
                 ]
@@ -20288,7 +20282,7 @@ var render = function() {
         "ul",
         {
           staticClass:
-            "\n            flex flex-1 flex-row items-center text-gray-700\n            md:-mx-3\n        "
+            "\n            flex flex-1 flex-row items-center\n            md:-mx-3\n        "
         },
         _vm._l(_vm.navigation_links, function(navigation_link, key) {
           return _vm.showLink(navigation_link)
@@ -20297,7 +20291,7 @@ var render = function() {
                 {
                   key: "header-link-desktop-" + key,
                   staticClass:
-                    "\n                mx-3\n                hover:text-gray-900\n            "
+                    "\n                mx-3 text-gray-700\n                hover:text-green-700\n            "
                 },
                 [
                   _c("a", { attrs: { href: navigation_link.url } }, [
@@ -20316,7 +20310,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "border-l border-gray-500 pl-6 text-gray-700" },
+        { staticClass: "border-l border-gray-800 pl-6 text-gray-700" },
         [
           _vm.user.isGuest()
             ? _c("div", [
@@ -20324,7 +20318,7 @@ var render = function() {
                   ? _c(
                       "a",
                       {
-                        staticClass: "hover:text-gray-900",
+                        staticClass: "hover:text-green-700",
                         class: { "mr-4": _vm.route("register") },
                         attrs: { href: _vm.route("login") }
                       },
@@ -20336,7 +20330,7 @@ var render = function() {
                   ? _c(
                       "a",
                       {
-                        staticClass: "hover:text-gray-900",
+                        staticClass: "hover:text-green-700",
                         attrs: { href: _vm.route("register") }
                       },
                       [_vm._v("\n                Register\n            ")]
@@ -20365,7 +20359,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-xs text-gray-500 hover:text-gray-900",
+                          "text-xs text-green-700 opacity-75 hover:opacity-100 hover:text-green-600",
                         attrs: { type: "submit" }
                       },
                       [
@@ -20418,7 +20412,7 @@ var render = function() {
           }
         ],
         staticClass:
-          "\n            absolute bg-gray-200 inset-0 mt-16 z-30 w-full\n            md:hidden\n        "
+          "\n            absolute bg-gray-850 inset-0 mt-16 z-30 w-full\n            md:hidden\n        "
       },
       [
         _c("div", { staticClass: "flex flex-col h-full overflow-auto" }, [
@@ -20438,7 +20432,7 @@ var render = function() {
                         "a",
                         {
                           staticClass:
-                            "\n                            block p-4 text-l text-center\n                            hover:bg-gray-900 hover:text-white\n                        ",
+                            "\n                            block p-4 text-l text-center\n                            hover:text-green-700\n                        ",
                           attrs: { href: navigation_link.url }
                         },
                         [
@@ -20456,7 +20450,7 @@ var render = function() {
             0
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "bg-gray-900 text-white text-sm" }, [
+          _c("div", { staticClass: "bg-gray-900 text-green-900 text-sm" }, [
             _vm.user.isGuest()
               ? _c("div", { staticClass: "flex" }, [
                   _vm.route("login")
@@ -20464,7 +20458,7 @@ var render = function() {
                         "a",
                         {
                           staticClass:
-                            "flex-1 p-2 text-center hover:bg-gray-800",
+                            "flex-1 p-2 text-center hover:text-green-700",
                           class: {
                             "border-r border-gray-900": _vm.route("register")
                           },
@@ -20483,7 +20477,7 @@ var render = function() {
                         "a",
                         {
                           staticClass:
-                            "flex-1 p-2 text-center hover:bg-gray-800",
+                            "flex-1 p-2 text-center hover:text-green-700",
                           attrs: { href: _vm.route("register") }
                         },
                         [
@@ -20495,13 +20489,17 @@ var render = function() {
                     : _vm._e()
                 ])
               : _c("div", { staticClass: "flex flex-col" }, [
-                  _c("p", { staticClass: "p-4 text-base text-center" }, [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(_vm.user.name) +
-                        "\n                    "
-                    )
-                  ]),
+                  _c(
+                    "p",
+                    { staticClass: "p-4 text-base text-center text-gray-700" },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.user.name) +
+                          "\n                    "
+                      )
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "form",
@@ -20516,7 +20514,7 @@ var render = function() {
                         "button",
                         {
                           staticClass:
-                            "w-full p-4 text-center hover:bg-gray-800",
+                            "w-full p-4 text-center hover:text-green-700",
                           attrs: { type: "submit" }
                         },
                         [
@@ -20561,7 +20559,7 @@ var render = function() {
     "button",
     {
       staticClass:
-        "\n        cursor-pointer fill-current flex justify-center text-gray-700\n        focus:outline-none focus:text-gray-900\n        hover:text-gray-900\n    ",
+        "\n        cursor-pointer fill-current flex justify-center text-gray-700\n        focus:outline-none\n        hover:text-green-700\n    ",
       on: { click: _vm.toggleButton }
     },
     [
@@ -20696,7 +20694,7 @@ var render = function() {
       _c(
         "label",
         {
-          staticClass: "md:text-right z",
+          staticClass: "md:text-right",
           class: _vm.label_class,
           attrs: { for: _vm.input_id }
         },
@@ -20712,12 +20710,15 @@ var render = function() {
         [
           _c("input", {
             ref: _vm.input_id,
-            staticClass: "w-full",
+            staticClass:
+              "bg-gray-850 border-gray-800 placeholder-gray-700 w-full",
             class: _vm.formatted_input_class,
             attrs: {
               id: _vm.input_id,
               autocomplete: _vm.input_autocomplete,
+              disabled: _vm.input_disabled,
               name: _vm.input_name,
+              placeholder: _vm.input_placeholder,
               required: _vm.input_required,
               type: _vm.input_type
             },
@@ -20843,7 +20844,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)

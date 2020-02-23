@@ -1346,7 +1346,6 @@ module.exports = function isAbsoluteURL(url) {
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
-var isValidXss = __webpack_require__(/*! ./isValidXss */ "./node_modules/axios/lib/helpers/isValidXss.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1366,10 +1365,6 @@ module.exports = (
     */
       function resolveURL(url) {
         var href = url;
-
-        if (isValidXss(url)) {
-          throw new Error('URL contains XSS injection attempt');
-        }
 
         if (msie) {
         // IE needs attribute set twice to normalize properties
@@ -1416,25 +1411,6 @@ module.exports = (
       };
     })()
 );
-
-
-/***/ }),
-
-/***/ "./node_modules/axios/lib/helpers/isValidXss.js":
-/*!******************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/isValidXss.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isValidXss(requestURL) {
-  var xssRegex = /(\b)(on\w+)=|javascript|(<\s*)(\/*)script/gi;
-  return xssRegex.test(requestURL);
-};
-
 
 
 /***/ }),
@@ -2168,6 +2144,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TwoColInputGroup",
   props: {
@@ -2199,12 +2177,20 @@ __webpack_require__.r(__webpack_exports__);
       "default": '',
       type: String
     },
+    input_disabled: {
+      "default": false,
+      type: Boolean
+    },
     input_id: {
       required: true,
       type: String
     },
     input_name: {
       required: true,
+      type: String
+    },
+    input_placeholder: {
+      "default": '',
       type: String
     },
     input_required: {
@@ -19890,7 +19876,7 @@ var render = function() {
     "button",
     {
       staticClass:
-        "\n        cursor-pointer fill-current flex justify-center text-gray-700\n        focus:outline-none focus:text-gray-900\n        hover:text-gray-900\n    ",
+        "\n        cursor-pointer fill-current flex justify-center text-gray-700\n        focus:outline-none\n        hover:text-green-700\n    ",
       on: { click: _vm.toggleButton }
     },
     [
@@ -20025,7 +20011,7 @@ var render = function() {
       _c(
         "label",
         {
-          staticClass: "md:text-right z",
+          staticClass: "md:text-right",
           class: _vm.label_class,
           attrs: { for: _vm.input_id }
         },
@@ -20041,12 +20027,15 @@ var render = function() {
         [
           _c("input", {
             ref: _vm.input_id,
-            staticClass: "w-full",
+            staticClass:
+              "bg-gray-850 border-gray-800 placeholder-gray-700 w-full",
             class: _vm.formatted_input_class,
             attrs: {
               id: _vm.input_id,
               autocomplete: _vm.input_autocomplete,
+              disabled: _vm.input_disabled,
               name: _vm.input_name,
+              placeholder: _vm.input_placeholder,
               required: _vm.input_required,
               type: _vm.input_type
             },
@@ -20172,7 +20161,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)

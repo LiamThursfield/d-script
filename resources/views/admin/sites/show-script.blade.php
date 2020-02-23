@@ -29,19 +29,11 @@
                 </h1>
             </div>
 
-            <div class="bg-gray-900 mt-8 overflow-hidden px-6 py-6 rounded-lg shadow-lg">
+            <show-script
+                :site="{{ json_encode($site) }}"
+                site_script="{{ $site_script }}"
+            ></show-script>
 
-                <p class="font-mono overflow-x-scroll overflow-y-hidden whitespace-no-wrap">
-                    {{ $site_script }}
-                </p>
-
-            </div>
-
-            <div class="flex flex-row items-center justify-end mt-8">
-                <a href="{{ route('admin.sites.show-script', $site) }}" class="btn btn-outline btn-green shadow-lg">
-                    Re-generate Script
-                </a>
-            </div>
         </div>
 
     </div>

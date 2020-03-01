@@ -3,9 +3,11 @@ html {
     @apply text-gray-600;
 }
 
-::selection {
-    background: theme('colors.gray.600'); /* WebKit/Blink Browsers */
+::selection { /* WebKit/Blink Browsers */
+    background: theme('colors.gray.900');
+    color: theme('colors.green.700');
 }
-::-moz-selection {
-    background: theme('colors.gray.600'); /* Gecko Browsers */
+::-moz-selection { /* Gecko Browsers */
+    background: theme('colors.gray.900');
+    color: theme('colors.green.700');
 }

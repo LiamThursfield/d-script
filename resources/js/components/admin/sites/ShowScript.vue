@@ -7,11 +7,11 @@
                 <div class="bg-green-600 h-4 rounded-full w-4"></div>
             </div>
 
-            <div class="mt-8">
+            <div class="dark-scrollbar mb-4 mt-8">
                 <div
                     class="font-mono text-green-800 text-sm px-3 whitespace-no-wrap"
                 >
-                    <p class="overflow-x-scroll pb-8">{{ site_script }}</p>
+                    <p class="overflow-x-scroll pb-4">{{ site_script }}</p>
                 </div>
             </div>
         </div>

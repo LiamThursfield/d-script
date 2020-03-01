@@ -1,0 +1,13 @@
+.dark-scrollbar {
+    ::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-850;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-800;
+    }
+}

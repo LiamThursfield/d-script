@@ -1,4 +1,4 @@
-.dark-scrollbar {
+.script-scrollbar {
     ::-webkit-scrollbar {
         height: 8px;
     }
@@ -9,5 +9,9 @@
 
     ::-webkit-scrollbar-thumb {
         @apply bg-gray-800;
+
+        &:hover {
+            @apply bg-green-700;
+        }
     }
 }

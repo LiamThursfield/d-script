@@ -7,7 +7,7 @@
                 <div class="bg-green-600 h-4 rounded-full w-4"></div>
             </div>
 
-            <div class="dark-scrollbar mb-4 mt-8">
+            <div class="script-scrollbar mb-4 mt-8">
                 <div
                     class="font-mono text-green-800 text-sm px-3 whitespace-no-wrap"
                 >

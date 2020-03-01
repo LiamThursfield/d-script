@@ -29,7 +29,7 @@
                 "
                 @click.prevent="addFile()"
             >
-                Add File
+                +
             </button>
         </div>
 

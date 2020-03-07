@@ -11,7 +11,7 @@ class SitePolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view any sites.
+     * Determine whether the user can view any sites (index).
      *
      * @param User $user
      * @return mixed

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSite;
 use App\Models\Site;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class SiteController extends Controller
 {
@@ -40,12 +43,28 @@ class SiteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  StoreSite  $request
+     * @return View
      */
-    public function store(Request $request)
+    public function store(StoreSite $request)
     {
-        //
+        $values = $request->only([
+            'current_release_directory',
+            'git_url',
+            'name',
+            'persistent_directory',
+            'persistent_files',
+            'post_activation_script',
+            'pre_activation_script',
+            'releases_directory',
+            'ssh_key_path',
+            'site_directory',
+        ]);
+        $values['user_id'] = Auth::user()->id;
+
+        $site = Site::create($values);
+
+        return view('admin.sites.show', ['site' => $site]);
     }
 
     /**
@@ -64,6 +83,7 @@ class SiteController extends Controller
      *
      * @param Site $site
      * @return View
+     * @throws AuthorizationException
      */
     protected function showScript(Site $site)
     {

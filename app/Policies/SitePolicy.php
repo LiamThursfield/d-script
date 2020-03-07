@@ -13,7 +13,7 @@ class SitePolicy
     /**
      * Determine whether the user can view any sites.
      *
-     * @param  \App\Models\User  $user
+     * @param User $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -24,8 +24,8 @@ class SitePolicy
     /**
      * Determine whether the user can view the site.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Site  $site
+     * @param User $user
+     * @param Site $site
      * @return mixed
      */
     public function view(User $user, Site $site)
@@ -36,8 +36,8 @@ class SitePolicy
     /**
      * Determine whether the user can view the site script.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Site  $site
+     * @param User $user
+     * @param Site $site
      * @return mixed
      */
     public function viewScript(User $user, Site $site)
@@ -48,7 +48,7 @@ class SitePolicy
     /**
      * Determine whether the user can create sites.
      *
-     * @param  \App\Models\User  $user
+     * @param User $user
      * @return mixed
      */
     public function create(User $user)
@@ -59,8 +59,8 @@ class SitePolicy
     /**
      * Determine whether the user can update the site.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Site  $site
+     * @param User $user
+     * @param Site $site
      * @return mixed
      */
     public function update(User $user, Site $site)
@@ -71,8 +71,8 @@ class SitePolicy
     /**
      * Determine whether the user can delete the site.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Site  $site
+     * @param User $user
+     * @param Site $site
      * @return mixed
      */
     public function delete(User $user, Site $site)
@@ -83,8 +83,8 @@ class SitePolicy
     /**
      * Determine whether the user can restore the site.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Site  $site
+     * @param User $user
+     * @param Site $site
      * @return mixed
      */
     public function restore(User $user, Site $site)
@@ -95,8 +95,8 @@ class SitePolicy
     /**
      * Determine whether the user can permanently delete the site.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Site  $site
+     * @param User $user
+     * @param Site $site
      * @return mixed
      */
     public function forceDelete(User $user, Site $site)

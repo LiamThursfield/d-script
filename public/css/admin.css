@@ -590,12 +590,14 @@ html {
   color: #718096;
 }
 
-::selection {
-  background: #718096; /* WebKit/Blink Browsers */
+::selection { /* WebKit/Blink Browsers */
+  background: #1a202c;
+  color: #2f855a;
 }
 
-::-moz-selection {
-  background: #718096; /* Gecko Browsers */
+::-moz-selection { /* Gecko Browsers */
+  background: #1a202c;
+  color: #2f855a;
 }
 
 .container{
@@ -710,13 +712,16 @@ input[type=email]:not(.appearance-none), input[type=number]:not(.appearance-none
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  border-radius: 0.25rem;
   color: #718096;
 }
 
 input[type=email]:not(.appearance-none):focus, input[type=number]:not(.appearance-none):focus, input[type=password]:not(.appearance-none):focus, input[type=tel]:not(.appearance-none):focus, input[type=text]:not(.appearance-none):focus, input[type=url]:not(.appearance-none):focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+input[type=email]:not(.appearance-none):not(.square), input[type=number]:not(.appearance-none):not(.square), input[type=password]:not(.appearance-none):not(.square), input[type=tel]:not(.appearance-none):not(.square), input[type=text]:not(.appearance-none):not(.square), input[type=url]:not(.appearance-none):not(.square) {
+  border-radius: 0.25rem;
 }
 
 input[type=email]:not(.appearance-none):not(.no-transition), input[type=number]:not(.appearance-none):not(.no-transition), input[type=password]:not(.appearance-none):not(.no-transition), input[type=tel]:not(.appearance-none):not(.no-transition), input[type=text]:not(.appearance-none):not(.no-transition), input[type=url]:not(.appearance-none):not(.no-transition) {
@@ -918,6 +923,22 @@ input[type=email]:not(.appearance-none).error, input[type=number]:not(.appearanc
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.script-scrollbar ::-webkit-scrollbar {
+  height: 8px;
+}
+
+.script-scrollbar ::-webkit-scrollbar-track {
+  background-color: #222938;
+}
+
+.script-scrollbar ::-webkit-scrollbar-thumb {
+  background-color: #2d3748;
+}
+
+.script-scrollbar ::-webkit-scrollbar-thumb:hover {
+  background-color: #2f855a;
 }
 
 .sr-only{

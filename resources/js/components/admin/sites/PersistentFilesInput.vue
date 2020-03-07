@@ -2,10 +2,12 @@
     <div>
         <!-- Hidden Input -->
         <input
-            id="persistent_files"
-            name="persistent_files"
+            v-for="(file, key) in persistent_files"
+            :id="'persistent_files_' + key"
+            :key="'file-' + key"
+            name="persistent_files[]"
             type="hidden"
-            :value="persistent_files_string"
+            :value="file"
         >
 
         <!-- Add Persistent Files -->
@@ -20,6 +22,7 @@
                 ref="_persistent_files_input"
                 type="text"
                 v-model="new_file"
+                @keypress.enter.prevent="addFile()"
             >
             <button
                 class="
@@ -27,6 +30,7 @@
                     focus:outline-none focus:shadow-outline-white
                     duration-500 ease-in-out transition-shadow
                 "
+                type="button"
                 @click.prevent="addFile()"
             >
                 +
@@ -54,6 +58,7 @@
                         focus:outline-none focus:shadow-outline-white
                         hover:bg-red-900 hover:text-gray-300
                     "
+                    type="button"
                     @click.prevent="removeFile(key)"
                 >
                     -
@@ -99,7 +104,7 @@
                 // If the file is valid and unique, add it to the array
                 if (
                     formatted_file.length > 0 &&
-                    _.indexOf(this.persistent_files, formatted_file)
+                    _.indexOf(this.persistent_files, formatted_file) < 0
                 ) {
                     this.persistent_files.push(formatted_file);
                     formatted_file = "";

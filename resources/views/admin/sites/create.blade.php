@@ -31,6 +31,29 @@
 
                 <!-- Git URL -->
                 <two-col-input-group
+                    @error('name')
+                        error_class="text-red-600"
+                        error_message="{{ $message }}"
+                    @enderror
+                    label_class="text-gray-700 md:w-48"
+                    label_text="Name"
+                    input_id="name"
+                    input_name="name"
+                    :input_required="true"
+                    input_type="text"
+                    input_value="{{ old('name') }}"
+                ></two-col-input-group>
+
+
+                <div class="border-t border-gray-800 h-1 my-6 w-full"></div>
+
+
+                <!-- Git URL -->
+                <two-col-input-group
+                    @error('git_url')
+                        error_class="text-red-600"
+                        error_message="{{ $message }}"
+                    @enderror
                     label_class="text-gray-700 md:w-48"
                     label_text="Git URL"
                     input_id="git_url"

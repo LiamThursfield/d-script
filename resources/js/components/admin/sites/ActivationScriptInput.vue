@@ -1,12 +1,22 @@
 <template>
     <div>
         <!-- Hidden Input -->
-        <input
-            :id="input_name"
-            :name="input_name"
-            type="hidden"
-            :value="activation_script_string"
-        >
+        <template v-for="(activation_script, key) in activation_scripts">
+            <input
+                :id="getFormInputName(key, 'command')"
+                :key="getFormInputName(key, 'command')"
+                :name="getFormInputName(key, 'command')"
+                type="hidden"
+                :value="activation_script.command"
+            >
+            <input
+                :id="getFormInputName(key, 'active')"
+                :key="getFormInputName(key, 'active')"
+                :name="getFormInputName(key, 'active')"
+                type="hidden"
+                :value="getFormInputBoolean(activation_script.active)"
+            >
+        </template>
 
         <!-- Add Script -->
         <div class="flex flex-row">
@@ -28,6 +38,7 @@
                     focus:outline-none focus:shadow-outline-white
                     duration-500 ease-in-out transition-shadow
                 "
+                type="button"
                 @click.prevent="addScript()"
             >
                 Add Script
@@ -60,6 +71,7 @@
                         focus:outline-none focus:shadow-outline-white
                         hover:bg-gray-700 hover:text-gray-900
                     "
+                    type="button"
                     @click.prevent="toggleScriptActivation(key)"
                 >
                     <template v-if="script.active === true">
@@ -75,7 +87,8 @@
                         focus:outline-none focus:shadow-outline-white
                         hover:bg-red-900 hover:text-gray-300
                     "
-                        @click.prevent="removeScript(key)"
+                    type="button"
+                    @click.prevent="removeScript(key)"
                 >
                     -
                 </button>
@@ -154,11 +167,20 @@
             deactivateScript(key) {
                 this.activation_scripts[key].active = false;
             },
+            getFormInputBoolean(value) {
+                console.log(value);
+                if(value === true || value === "true") {
+                    return 1;
+                }
+                return 0;
+            },
+            getFormInputName(key, type) {
+                return this.input_name + '[' + key + '][' + type + ']';
+            },
             removeScript(key) {
                 this.$delete(this.activation_scripts, key);
             },
             toggleScriptActivation(key) {
-                console.log(this.activation_scripts[key]);
                 this.activation_scripts[key].active = !this.activation_scripts[key].active;
             }
         }

@@ -2353,6 +2353,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ScriptInput",
@@ -2421,11 +2434,22 @@ __webpack_require__.r(__webpack_exports__);
     deactivateScript: function deactivateScript(key) {
       this.activation_scripts[key].active = false;
     },
+    getFormInputBoolean: function getFormInputBoolean(value) {
+      console.log(value);
+
+      if (value === true || value === "true") {
+        return 1;
+      }
+
+      return 0;
+    },
+    getFormInputName: function getFormInputName(key, type) {
+      return this.input_name + '[' + key + '][' + type + ']';
+    },
     removeScript: function removeScript(key) {
       this.$delete(this.activation_scripts, key);
     },
     toggleScriptActivation: function toggleScriptActivation(key) {
-      console.log(this.activation_scripts[key]);
       this.activation_scripts[key].active = !this.activation_scripts[key].active;
     }
   }
@@ -2444,6 +2468,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2542,7 +2571,7 @@ __webpack_require__.r(__webpack_exports__);
     addFile: function addFile() {
       var formatted_file = this.new_file.trim(); // If the file is valid and unique, add it to the array
 
-      if (formatted_file.length > 0 && lodash__WEBPACK_IMPORTED_MODULE_0___default.a.indexOf(this.persistent_files, formatted_file)) {
+      if (formatted_file.length > 0 && lodash__WEBPACK_IMPORTED_MODULE_0___default.a.indexOf(this.persistent_files, formatted_file) < 0) {
         this.persistent_files.push(formatted_file);
         formatted_file = "";
       } // Reset the input and re-focus
@@ -21074,153 +21103,185 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("input", {
-      attrs: { id: _vm.input_name, name: _vm.input_name, type: "hidden" },
-      domProps: { value: _vm.activation_script_string }
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex flex-row" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.new_script,
-            expression: "new_script"
-          }
-        ],
-        ref: _vm.input_name,
-        staticClass:
-          "\n                square\n                flex-1 rounded-l\n            ",
-        attrs: {
-          id: "_activation_scripts_input_" + _vm.input_name,
-          name: "_activation_scripts_input_" + _vm.input_name,
-          type: "text"
-        },
-        domProps: { value: _vm.new_script },
-        on: {
-          keypress: function($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
+  return _c(
+    "div",
+    [
+      _vm._l(_vm.activation_scripts, function(activation_script, key) {
+        return [
+          _c("input", {
+            key: _vm.getFormInputName(key, "command"),
+            attrs: {
+              id: _vm.getFormInputName(key, "command"),
+              name: _vm.getFormInputName(key, "command"),
+              type: "hidden"
+            },
+            domProps: { value: activation_script.command }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            key: _vm.getFormInputName(key, "active"),
+            attrs: {
+              id: _vm.getFormInputName(key, "active"),
+              name: _vm.getFormInputName(key, "active"),
+              type: "hidden"
+            },
+            domProps: {
+              value: _vm.getFormInputBoolean(activation_script.active)
             }
-            $event.preventDefault()
-            return _vm.addScript()
-          },
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.new_script = $event.target.value
-          }
-        }
+          })
+        ]
       }),
       _vm._v(" "),
-      _c(
-        "button",
-        {
+      _c("div", { staticClass: "flex flex-row" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.new_script,
+              expression: "new_script"
+            }
+          ],
+          ref: _vm.input_name,
           staticClass:
-            "\n                border border-gray-800 border-l-0 px-3 rounded-r text-gray-700\n                focus:outline-none focus:shadow-outline-white\n                duration-500 ease-in-out transition-shadow\n            ",
+            "\n                square\n                flex-1 rounded-l\n            ",
+          attrs: {
+            id: "_activation_scripts_input_" + _vm.input_name,
+            name: "_activation_scripts_input_" + _vm.input_name,
+            type: "text"
+          },
+          domProps: { value: _vm.new_script },
           on: {
-            click: function($event) {
+            keypress: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
               $event.preventDefault()
               return _vm.addScript()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.new_script = $event.target.value
             }
           }
-        },
-        [_vm._v("\n            Add Script\n        ")]
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "flex flex-col mt-2" },
-      _vm._l(_vm.activation_scripts, function(script, key) {
-        return _c(
-          "div",
-          { key: key, staticClass: "flex flex-row items-center mt-4" },
-          [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.activation_scripts[key].command,
-                  expression: "activation_scripts[key].command"
-                }
-              ],
-              staticClass:
-                "\n                    appearance-none bg-gray-850 border border-gray-800 flex-1 h-8 px-3 rounded-full text-gray-600\n                    focus:outline-none focus:shadow-outline-white\n                ",
-              class: {
-                "line-through opacity-50": script.active === false
-              },
-              attrs: { disabled: script.active === false, type: "text" },
-              domProps: { value: _vm.activation_scripts[key].command },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.activation_scripts[key],
-                    "command",
-                    $event.target.value
-                  )
-                }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "\n                border border-gray-800 border-l-0 px-3 rounded-r text-gray-700\n                focus:outline-none focus:shadow-outline-white\n                duration-500 ease-in-out transition-shadow\n            ",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.addScript()
               }
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "\n                    border border-gray-700 flex h-8 items-center justify-center ml-3 px-3 rounded-full text-gray-700\n                    focus:outline-none focus:shadow-outline-white\n                    hover:bg-gray-700 hover:text-gray-900\n                ",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.toggleScriptActivation(key)
-                  }
-                }
-              },
-              [
-                script.active === true
-                  ? [
-                      _vm._v(
-                        "\n                    Deactivate\n                "
-                      )
-                    ]
-                  : _vm._e(),
-                _vm._v(" "),
-                script.active === false
-                  ? [_vm._v("\n                    Activate\n                ")]
-                  : _vm._e()
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "\n                    border border-red-900 flex h-8 items-center justify-center ml-3 rounded-full text-red-900 w-8\n                    focus:outline-none focus:shadow-outline-white\n                    hover:bg-red-900 hover:text-gray-300\n                ",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.removeScript(key)
-                  }
-                }
-              },
-              [_vm._v("\n                -\n            ")]
-            )
-          ]
+            }
+          },
+          [_vm._v("\n            Add Script\n        ")]
         )
-      }),
-      0
-    )
-  ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex flex-col mt-2" },
+        _vm._l(_vm.activation_scripts, function(script, key) {
+          return _c(
+            "div",
+            { key: key, staticClass: "flex flex-row items-center mt-4" },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.activation_scripts[key].command,
+                    expression: "activation_scripts[key].command"
+                  }
+                ],
+                staticClass:
+                  "\n                    appearance-none bg-gray-850 border border-gray-800 flex-1 h-8 px-3 rounded-full text-gray-600\n                    focus:outline-none focus:shadow-outline-white\n                ",
+                class: {
+                  "line-through opacity-50": script.active === false
+                },
+                attrs: { disabled: script.active === false, type: "text" },
+                domProps: { value: _vm.activation_scripts[key].command },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.activation_scripts[key],
+                      "command",
+                      $event.target.value
+                    )
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "\n                    border border-gray-700 flex h-8 items-center justify-center ml-3 px-3 rounded-full text-gray-700\n                    focus:outline-none focus:shadow-outline-white\n                    hover:bg-gray-700 hover:text-gray-900\n                ",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.toggleScriptActivation(key)
+                    }
+                  }
+                },
+                [
+                  script.active === true
+                    ? [
+                        _vm._v(
+                          "\n                    Deactivate\n                "
+                        )
+                      ]
+                    : _vm._e(),
+                  _vm._v(" "),
+                  script.active === false
+                    ? [
+                        _vm._v(
+                          "\n                    Activate\n                "
+                        )
+                      ]
+                    : _vm._e()
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "\n                    border border-red-900 flex h-8 items-center justify-center ml-3 rounded-full text-red-900 w-8\n                    focus:outline-none focus:shadow-outline-white\n                    hover:bg-red-900 hover:text-gray-300\n                ",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.removeScript(key)
+                    }
+                  }
+                },
+                [_vm._v("\n                -\n            ")]
+              )
+            ]
+          )
+        }),
+        0
+      )
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -21244,112 +21305,131 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("input", {
-      attrs: {
-        id: "persistent_files",
-        name: "persistent_files",
-        type: "hidden"
-      },
-      domProps: { value: _vm.persistent_files_string }
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex flex-row" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.new_file,
-            expression: "new_file"
-          }
-        ],
-        ref: "_persistent_files_input",
-        staticClass:
-          "\n                square\n                flex-1 rounded-l\n            ",
-        attrs: {
-          id: "_persistent_files_input",
-          name: "_persistent_files_input",
-          type: "text"
-        },
-        domProps: { value: _vm.new_file },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.new_file = $event.target.value
-          }
-        }
+  return _c(
+    "div",
+    [
+      _vm._l(_vm.persistent_files, function(file, key) {
+        return _c("input", {
+          key: "file-" + key,
+          attrs: {
+            id: "persistent_files_" + key,
+            name: "persistent_files[]",
+            type: "hidden"
+          },
+          domProps: { value: file }
+        })
       }),
       _vm._v(" "),
-      _c(
-        "button",
-        {
+      _c("div", { staticClass: "flex flex-row" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.new_file,
+              expression: "new_file"
+            }
+          ],
+          ref: "_persistent_files_input",
           staticClass:
-            "\n                border border-gray-800 border-l-0 rounded-r px-3\n                focus:outline-none focus:shadow-outline-white\n                duration-500 ease-in-out transition-shadow\n            ",
+            "\n                square\n                flex-1 rounded-l\n            ",
+          attrs: {
+            id: "_persistent_files_input",
+            name: "_persistent_files_input",
+            type: "text"
+          },
+          domProps: { value: _vm.new_file },
           on: {
-            click: function($event) {
+            keypress: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
               $event.preventDefault()
               return _vm.addFile()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.new_file = $event.target.value
             }
           }
-        },
-        [_vm._v("\n            +\n        ")]
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "flex flex-col mt-2" },
-      _vm._l(_vm.persistent_files, function(persistent_file, key) {
-        return _c(
-          "div",
-          { key: key, staticClass: "flex flex-row items-center mt-4" },
-          [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.persistent_files[key],
-                  expression: "persistent_files[key]"
-                }
-              ],
-              staticClass:
-                "\n                    appearance-none bg-gray-850 border border-gray-800 flex-1 h-8 px-3 rounded-full text-gray-600\n                    focus:outline-none focus:shadow-outline-white\n                ",
-              attrs: { type: "text" },
-              domProps: { value: _vm.persistent_files[key] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.persistent_files, key, $event.target.value)
-                }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "\n                border border-gray-800 border-l-0 rounded-r px-3\n                focus:outline-none focus:shadow-outline-white\n                duration-500 ease-in-out transition-shadow\n            ",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.addFile()
               }
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
+            }
+          },
+          [_vm._v("\n            +\n        ")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex flex-col mt-2" },
+        _vm._l(_vm.persistent_files, function(persistent_file, key) {
+          return _c(
+            "div",
+            { key: key, staticClass: "flex flex-row items-center mt-4" },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.persistent_files[key],
+                    expression: "persistent_files[key]"
+                  }
+                ],
                 staticClass:
-                  "\n                    border border-red-900 flex h-8 items-center justify-center ml-3 rounded-full text-red-900 w-8\n                    focus:outline-none focus:shadow-outline-white\n                    hover:bg-red-900 hover:text-gray-300\n                ",
+                  "\n                    appearance-none bg-gray-850 border border-gray-800 flex-1 h-8 px-3 rounded-full text-gray-600\n                    focus:outline-none focus:shadow-outline-white\n                ",
+                attrs: { type: "text" },
+                domProps: { value: _vm.persistent_files[key] },
                 on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.removeFile(key)
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.persistent_files, key, $event.target.value)
                   }
                 }
-              },
-              [_vm._v("\n                -\n            ")]
-            )
-          ]
-        )
-      }),
-      0
-    )
-  ])
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "\n                    border border-red-900 flex h-8 items-center justify-center ml-3 rounded-full text-red-900 w-8\n                    focus:outline-none focus:shadow-outline-white\n                    hover:bg-red-900 hover:text-gray-300\n                ",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.removeFile(key)
+                    }
+                  }
+                },
+                [_vm._v("\n                -\n            ")]
+              )
+            ]
+          )
+        }),
+        0
+      )
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

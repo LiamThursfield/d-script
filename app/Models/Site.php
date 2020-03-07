@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property integer id
  * @property integer user_id
+ * @property string name
  * @property string git_url
  * @property null|string ssh_key_path
  * @property string site_directory

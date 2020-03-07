@@ -5,8 +5,6 @@
 
         <div class="admin-content-container">
 
-            @include('admin._partials.session-card')
-
             <div class="flex flex-row items-baseline justify-between">
                 <h1 class="text-2xl">
                     Sites
@@ -25,6 +23,8 @@
                 </a>
                 </div>
             </div>
+
+            @include('admin._partials.session-card')
 
             @if(count($sites) > 0)
             <div class="bg-gray-900 mt-8 overflow-hidden py-1 rounded-lg shadow-lg">

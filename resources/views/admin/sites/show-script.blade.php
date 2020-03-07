@@ -5,8 +5,6 @@
 
         <div class="admin-content-container">
 
-            @include('admin._partials.session-card')
-
             <div class="flex flex-row items-baseline">
                 <h1 class="text-2xl">
                     <span class="text-gray-700">
@@ -28,6 +26,8 @@
                     d-script
                 </h1>
             </div>
+
+            @include('admin._partials.session-card')
 
             <show-script
                 :site="{{ json_encode($site) }}"

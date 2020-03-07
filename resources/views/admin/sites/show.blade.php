@@ -5,8 +5,6 @@
 
         <div class="admin-content-container">
 
-            @include('admin._partials.session-card')
-
             <div class="flex flex-row items-baseline">
                 <h1 class="text-2xl">
                     <span class="text-gray-700">
@@ -21,6 +19,8 @@
                     {{ $site->name }}
                 </h1>
             </div>
+
+            @include('admin._partials.session-card')
 
             <div class="bg-gray-900 mt-8 overflow-hidden px-6 py-6 rounded-lg shadow-lg">
                 <!-- Git URL -->

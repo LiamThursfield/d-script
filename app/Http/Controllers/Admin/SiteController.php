@@ -18,7 +18,7 @@ class SiteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class SiteController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create()
     {
@@ -51,8 +51,8 @@ class SiteController extends Controller
     /**
      * Display the specified site.
      *
-     * @param  \App\Models\Site  $site
-     * @return \Illuminate\Http\Response
+     * @param Site $site
+     * @return View
      */
     public function show(Site $site)
     {
@@ -63,8 +63,7 @@ class SiteController extends Controller
      * Generate and display the d-script for the specified site.
      *
      * @param Site $site
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @return View
      */
     protected function showScript(Site $site)
     {
@@ -78,7 +77,7 @@ class SiteController extends Controller
     /**
      * Show the form for editing the specified site.
      *
-     * @param  \App\Models\Site  $site
+     * @param Site $site
      * @return \Illuminate\Http\Response
      */
     public function edit(Site $site)
@@ -90,7 +89,7 @@ class SiteController extends Controller
      * Update the specified site in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Site  $site
+     * @param Site $site
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Site $site)
@@ -101,7 +100,7 @@ class SiteController extends Controller
     /**
      * Remove the specified site from storage.
      *
-     * @param  \App\Models\Site  $site
+     * @param Site $site
      * @return \Illuminate\Http\Response
      */
     public function destroy(Site $site)

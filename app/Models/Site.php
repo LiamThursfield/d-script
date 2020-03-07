@@ -48,6 +48,11 @@ class Site extends Model
         'post_activation_script' => 'array',
     ];
 
+
+    /*********************
+     * Attribute Getters *
+     *********************/
+
     public function getCurrentReleasePathAttribute()
     {
         return format_directory_path($this->site_directory . '/' . $this->current_release_directory);
@@ -68,6 +73,28 @@ class Site extends Model
         return format_directory_path($this->site_directory);
     }
 
+
+    /*********************
+     * Attribute Getters *
+     *********************/
+
+    public function setPreActivationScriptAttribute($value)
+    {
+
+        $this->attributes['pre_activation_script'] = $this->formatActivationScriptAttribute($value);
+    }
+
+    public function setPostActivationScriptAttribute($value)
+    {
+
+        $this->attributes['post_activation_script'] = $this->formatActivationScriptAttribute($value);
+    }
+
+
+    /*****************
+     * Relationships *
+     *****************/
+
     /**
      * Get the site's user.
      *
@@ -77,6 +104,11 @@ class Site extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
+    /***********
+     * Helpers *
+     ***********/
 
     /**
      * Generate the d-script for the current site.
@@ -136,5 +168,28 @@ class Site extends Model
         }
 
         return implode(' && ', $d_script);
+    }
+
+    /**
+     * Ensure the 'active' key for each script is a boolean
+     * @param $activation_scripts
+     * @return mixed
+     */
+    protected function formatActivationScriptAttribute($activation_scripts)
+    {
+        if (!is_array($activation_scripts)) {
+            return $activation_scripts;
+        }
+
+        foreach ($activation_scripts as $key => $activation_script) {
+            if (isset($activation_script['active'])) {
+                $activation_scripts[$key]['active'] = (bool) $activation_script['active'];
+            } else {
+                $activation_scripts[$key]['active'] = false;
+            }
+        }
+
+        // JSON Encode is required, as setting the attribute as an array breaks the array cast
+        return json_encode($activation_scripts);
     }
 }

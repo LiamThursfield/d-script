@@ -144,7 +144,10 @@
                 <!-- Pre Activation Script -->
                 <div class="flex input-group items-start mt-4 relative z-10">
                     <label
-                        class="text-gray-700 md:text-right md:w-48"
+                        class="
+                            text-gray-700 pt-2
+                            md:text-right md:w-48
+                        "
                         for="pre_activation_script"
                     >
                         Pre-Activation Script
@@ -188,7 +191,10 @@
                 <!-- Pre Activation Script -->
                 <div class="flex input-group items-start mt-4 relative z-10">
                     <label
-                        class="text-gray-700 md:text-right md:w-48"
+                        class="
+                            text-gray-700 pt-2
+                            md:text-right md:w-48
+                        "
                         for="post_activation_script"
                     >
                         Post-Activation Script

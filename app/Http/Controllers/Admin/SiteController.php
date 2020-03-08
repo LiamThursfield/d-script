@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSite;
 use App\Models\Site;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -44,7 +45,7 @@ class SiteController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  StoreSite  $request
-     * @return View
+     * @return RedirectResponse
      */
     public function store(StoreSite $request)
     {
@@ -63,8 +64,7 @@ class SiteController extends Controller
         $values['user_id'] = Auth::user()->id;
 
         $site = Site::create($values);
-
-        return view('admin.sites.show', ['site' => $site]);
+        return redirect()->route('admin.sites.show', ['site' => $site]);
     }
 
     /**

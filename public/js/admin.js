@@ -34887,7 +34887,7 @@ module.exports = function (name) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/liamjohnson/Documents/personal/repos/d-script/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! D:\code\web\d-script\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })

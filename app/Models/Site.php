@@ -152,6 +152,9 @@ class Site extends Model
         // Clone the repo into the new release directory
         $d_script[] = 'git clone ' . $this->git_path . ' ' . $new_release_path;
 
+        // Navigate to the new release directory
+        $d_script[] = 'cd ' . $new_release_path;
+
         // Link any persistent files
         foreach ($this->persistent_files as $persistent_file) {
             $d_script[] =

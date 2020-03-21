@@ -114,7 +114,7 @@
 
                     <div
                         class="
-                            bg-gray-850 border border-gray-800 flex-1 mt-1 outline-none px-3 rounded text-gray-600
+                            bg-gray-850 border border-gray-800 flex-1 mt-1 outline-none px-3 rounded text-gray-600 w-full
                             md:ml-6 md:mt-0
                         "
                     >
@@ -155,7 +155,7 @@
 
                     <div
                         class="
-                            bg-gray-850 border border-gray-800 flex-1 mt-1 outline-none px-3 rounded text-gray-600
+                            bg-gray-850 border border-gray-800 flex-1 mt-1 outline-none px-3 rounded text-gray-600 w-full
                             md:ml-6 md:mt-0
                         "
                     >
@@ -202,7 +202,7 @@
 
                     <div
                         class="
-                            bg-gray-850 border border-gray-800 flex-1 mt-1 outline-none px-3 rounded text-gray-600
+                            bg-gray-850 border border-gray-800 flex-1 mt-1 outline-none px-3 rounded text-gray-600 w-full
                             md:ml-6 md:mt-0
                         "
                     >

@@ -48,19 +48,19 @@
                 <div class="border-t border-gray-800 h-1 my-6 w-full"></div>
 
 
-                <!-- Git URL -->
+                <!-- Git Path -->
                 <two-col-input-group
-                    @error('git_url')
+                    @error('git_path')
                         error_class="text-red-600"
                         error_message="{{ $message }}"
                     @enderror
                     label_class="text-gray-700 md:w-48"
-                    label_text="Git URL"
-                    input_id="git_url"
-                    input_name="git_url"
+                    label_text="Git Path"
+                    input_id="git_path"
+                    input_name="git_path"
                     :input_required="true"
                     input_type="text"
-                    input_value="{{ old('git_url') }}"
+                    input_value="{{ old('git_path') }}"
                 ></two-col-input-group>
 
                 <!-- SSH Key Path -->

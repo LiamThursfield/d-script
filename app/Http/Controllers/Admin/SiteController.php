@@ -129,7 +129,7 @@ class SiteController extends Controller
     {
         $values = $request->only([
             'current_release_directory',
-            'git_url',
+            'git_path',
             'name',
             'persistent_directory',
             'persistent_files',

@@ -26,7 +26,7 @@ class StoreSite extends FormRequest
     {
         return [
             'current_release_directory'         => 'required',
-            'git_url'                           => 'required|url',
+            'git_path'                          => 'required',
             'name'                              => 'required',
             'persistent_directory'              => 'required',
             'persistent_files'                  => 'sometimes|array',

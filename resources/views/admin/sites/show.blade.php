@@ -23,15 +23,15 @@
             @include('admin._partials.session-card')
 
             <div class="bg-gray-900 mt-8 overflow-hidden px-6 py-6 rounded-lg shadow-lg">
-                <!-- Git URL -->
+                <!-- Git Path -->
                 <two-col-input-group
                     label_class="text-gray-700 md:w-48"
-                    label_text="Git URL"
-                    input_id="git_url"
+                    label_text="Git Path"
+                    input_id="git_path"
                     :input_disabled="true"
-                    input_name="git_url"
+                    input_name="git_path"
                     input_type="text"
-                    input_value="{{ $site->git_url }}"
+                    input_value="{{ $site->git_path }}"
                 ></two-col-input-group>
 
                 <!-- SSH Key Path -->

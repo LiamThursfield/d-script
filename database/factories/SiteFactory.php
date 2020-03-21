@@ -13,7 +13,7 @@ $factory->define(Site::class, function (Faker $faker) {
 
     return [
         'name'                      => $company_name,
-        'git_url'                   => 'https://github.com/' . $user_name . '/' . $company_name_slug ,
+        'git_path'                  => 'git@github.com:' . $user_name . '/' . $company_name_slug . '.git',
         'ssh_key_path'              => '/home/' . $user_name . '/.ssh/' . $company_name_slug . '/id_rsa',
         'site_directory'            => '/home/' . $user_name . '/sites/' . $company_name_slug,
         'current_release_directory' => 'current',

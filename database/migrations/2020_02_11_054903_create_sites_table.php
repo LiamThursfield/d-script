@@ -18,7 +18,7 @@ class CreateSitesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name')->index();
-            $table->string('git_url');
+            $table->string('git_path');
             $table->string('ssh_key_path')->nullable();
             $table->string('site_directory');
             $table->string('current_release_directory');

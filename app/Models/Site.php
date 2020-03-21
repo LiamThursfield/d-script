@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer id
  * @property integer user_id
  * @property string name
- * @property string git_url
+ * @property string git_path
  * @property null|string ssh_key_path
  * @property string site_directory
  * @property string current_release_directory
@@ -150,7 +150,7 @@ class Site extends Model
         }
 
         // Clone the repo into the new release directory
-        $d_script[] = 'git clone ' . $this->git_url . ' ' . $new_release_path;
+        $d_script[] = 'git clone ' . $this->git_path . ' ' . $new_release_path;
 
         // Link any persistent files
         foreach ($this->persistent_files as $persistent_file) {

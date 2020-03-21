@@ -168,7 +168,6 @@
                 this.activation_scripts[key].active = false;
             },
             getFormInputBoolean(value) {
-                console.log(value);
                 if(value === true || value === "true") {
                     return 1;
                 }

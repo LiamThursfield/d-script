@@ -38,6 +38,17 @@ class Site extends Model
     protected $guarded = [];
 
     /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'persistent_files' => '[]',
+        'pre_activation_script' => '[]',
+        'post_activation_script' => '[]',
+    ];
+
+    /**
      * The attributes that should be cast to native types.
      *
      * @var array

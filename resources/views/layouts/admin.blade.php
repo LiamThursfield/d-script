@@ -22,7 +22,10 @@
     <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-850">
-    <div id="app">
+    <div
+        id="app"
+        class="flex flex-col min-h-screen"
+    >
 
         <header-main></header-main>
 
@@ -30,10 +33,12 @@
             @yield('content')
         </main>
 
-        <footer class="bg-gray-900 border-gray-700 border-t-2 mt-16 py-8 text-white">
 
-            <div class="container mx-auto">
-                <p class="text-center">&copy; 2020 Liam Thursfield</p>
+        <footer class="mt-auto">
+            <div class="bg-gray-900 border-gray-700 border-t-2 mt-16 py-8 text-white">
+                <div class="container mx-auto">
+                    <p class="text-center">&copy; 2020 Liam Thursfield</p>
+                </div>
             </div>
         </footer>
     </div>

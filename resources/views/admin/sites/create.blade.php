@@ -63,13 +63,13 @@
                     input_value="{{ old('git_url') }}"
                 ></two-col-input-group>
 
-                <!-- SSH Path -->
+                <!-- SSH Key Path -->
                 <two-col-input-group
                     class="mt-4"
                     label_class="text-gray-700 md:w-48"
-                    label_text="SSH Path"
-                    input_id="ssh_path"
-                    input_name="ssh_path"
+                    label_text="SSH Key Path"
+                    input_id="ssh_key_path"
+                    input_name="ssh_key_path"
                     input_placeholder="(Leave blank if ssh is not required)"
                     input_type="text"
                     input_value="{{ old('ssh_key_path') }}"

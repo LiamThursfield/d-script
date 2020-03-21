@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSite;
+use App\Http\Requests\UpdateSite;
 use App\Models\Site;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
@@ -49,21 +50,7 @@ class SiteController extends Controller
      */
     public function store(StoreSite $request)
     {
-        $values = $request->only([
-            'current_release_directory',
-            'git_url',
-            'name',
-            'persistent_directory',
-            'persistent_files',
-            'post_activation_script',
-            'pre_activation_script',
-            'releases_directory',
-            'ssh_key_path',
-            'site_directory',
-        ]);
-        $values['user_id'] = Auth::user()->id;
-
-        $site = Site::create($values);
+        $site = Site::create($this->getRequestValues($request, true));
         return redirect()->route('admin.sites.show', ['site' => $site]);
     }
 
@@ -98,33 +85,65 @@ class SiteController extends Controller
      * Show the form for editing the specified site.
      *
      * @param Site $site
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function edit(Site $site)
     {
-        //
+        return view('admin.sites.edit', ['site' => $site]);
     }
 
     /**
      * Update the specified site in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UpdateSite  $request
      * @param Site $site
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, Site $site)
+    public function update(UpdateSite $request, Site $site)
     {
-        //
+        $site->update($this->getRequestValues($request));
+        return redirect()->route('admin.sites.show', ['site' => $site]);
     }
 
     /**
      * Remove the specified site from storage.
      *
      * @param Site $site
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function destroy(Site $site)
     {
-        //
+        // Currently no destroy
+        return redirect()->route('admin.sites.show', ['site' => $site]);
+    }
+
+
+    /**
+     * Get only the allowed/fillable values for creating/updating a site
+     *
+     * @param Request $request
+     * @param bool $with_user - required for create
+     * @return array
+     */
+    public function getRequestValues(Request $request, bool $with_user = false)
+    {
+        $values = $request->only([
+            'current_release_directory',
+            'git_url',
+            'name',
+            'persistent_directory',
+            'persistent_files',
+            'post_activation_script',
+            'pre_activation_script',
+            'releases_directory',
+            'ssh_key_path',
+            'site_directory',
+        ]);
+
+        if ($with_user) {
+            $values['user_id'] = Auth::user()->id;
+        }
+
+        return $values;
     }
 }

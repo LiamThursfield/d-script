@@ -29,7 +29,7 @@
             <div class="bg-gray-900 mt-8 overflow-hidden px-6 py-6 rounded-lg shadow-lg">
                 @csrf
 
-                <!-- Git URL -->
+                <!-- Site Name -->
                 <two-col-input-group
                     @error('name')
                         error_class="text-red-600"

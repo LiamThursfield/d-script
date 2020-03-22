@@ -29,7 +29,7 @@
             @if(count($sites) > 0)
             <div class="bg-gray-900 mt-8 overflow-hidden py-1 rounded-lg shadow-lg">
 
-                <ul class="mt-2">
+                <ul class="my-2">
                     @foreach($sites as $site)
                         <li>
                             <a

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -40,9 +41,19 @@ class User extends Authenticatable
 
     /**
      * Get the user's sites
+     * @return HasMany
      */
     public function sites()
     {
         return $this->hasMany(Site::class);
+    }
+
+    /**
+     * Get the user's latest sites
+     * @return HasMany
+     */
+    public function latestSites()
+    {
+        return $this->hasMany(Site::class)->orderBy('created_at', 'desc');
     }
 }

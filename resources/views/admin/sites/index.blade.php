@@ -27,30 +27,11 @@
             @include('admin._partials.session-card')
 
             @if(count($sites) > 0)
-            <div class="bg-gray-900 mt-8 overflow-hidden py-1 rounded-lg shadow-lg">
+                @include('admin._partials.sites.list', ['sites' => $sites])
 
-                <ul class="my-2">
-                    @foreach($sites as $site)
-                        <li>
-                            <a
-                                class="
-                                    block px-6 py-3 font-mono
-                                    duration-300 ease-in-out transition-all
-                                    hover:text-green-700 hover:pl-8
-                                "
-                                href="{{ route('admin.sites.show', $site) }}"
-                            >
-                                <span class="font-mono opacity-50"> > </span>
-                                {{ $site->name }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-
-            <div class="mt-4 text-center">
-                {!! $sites->links() !!}
-            </div>
+                <div class="mt-4 text-center">
+                    {!! $sites->links() !!}
+                </div>
             @else
                 <div class="bg-gray-900 border-gray-600 border-l-4 mt-8 p-6 rounded-l rounded-r-lg shadow-lg">
                     <p>

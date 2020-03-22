@@ -1,3 +1,7 @@
 .admin-content-container {
     @apply max-w-4xl mx-auto w-full;
 }
+
+.error-content-container {
+    @apply max-w-lg mx-auto w-full;
+}

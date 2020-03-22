@@ -11,7 +11,12 @@
             <div class="bg-green-600 h-4 rounded-full w-4"></div>
         </div>
 
-        <h1 class="flex items-center justify-center px-20 py-16 text-center text-green-700 text-5xl">
+        <h1
+            class="
+                flex items-center justify-center px-20 py-16 text-3xl text-center text-green-700
+                md:text-5xl
+            "
+        >
             {{ config('app.name', 'd-script') }}
         </h1>
 

@@ -26,7 +26,7 @@
                     :ref="input_id"
                     :required="input_required"
                     :type="input_type"
-                    :value="input_value"
+                    v-model="current_value"
                     @keypress="hideError"
                 >
             </div>
@@ -54,6 +54,10 @@
     export default {
         name: "TwoColInputGroup",
         props: {
+            allow_parent_updates: {
+                default: true,
+                type: Boolean
+            },
             error_class: {
                 default: 'text-red-600',
                 type: String
@@ -113,6 +117,7 @@
         },
         data() {
             return  {
+                current_value: '',
                 hide_error: false
             }
         },
@@ -128,6 +133,7 @@
             }
         },
         mounted() {
+            this.current_value = this.input_value;
             this.autofocus();
         },
         methods: {
@@ -141,6 +147,16 @@
             hideError() {
                 this.hide_error = true;
             },
+            onInputValueChange() {
+                if (this.allow_parent_updates) {
+                    this.current_value = this.input_value;
+                }
+            }
+        },
+        watch: {
+            input_value: {
+                handler: "onInputValueChange"
+            }
         }
     }
 </script>
